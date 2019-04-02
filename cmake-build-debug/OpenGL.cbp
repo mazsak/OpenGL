@@ -90,6 +90,12 @@
 		<Unit filename="E:/Project_CLoin/OpenGL/InitWindow.h">
 			<Option target="OpenGL"/>
 		</Unit>
+		<Unit filename="E:/Project_CLoin/OpenGL/Solid.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="E:/Project_CLoin/OpenGL/Solid.h">
+			<Option target="OpenGL"/>
+		</Unit>
 		<Unit filename="E:/Project_CLoin/OpenGL/main.cpp">
 			<Option target="OpenGL"/>
 		</Unit>

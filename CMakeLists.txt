@@ -11,5 +11,5 @@ link_directories(glew-2.1.0/lib/Release/Win32)
 include_directories(glfw-3.2.1.bin.WIN32/include)
 link_directories(glfw-3.2.1.bin.WIN32/lib-mingw)
 
-add_executable(OpenGL main.cpp InitWindow.cpp InitWindow.h)
+add_executable(OpenGL main.cpp InitWindow.cpp InitWindow.h Solid.cpp Solid.h)
 target_link_libraries(OpenGL glfw3.a glew32 ${OPENGL_LIBRARIES})

@@ -149,6 +149,33 @@ InitWindow.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.s
 .PHONY : InitWindow.cpp.s
 
+Solid.obj: Solid.cpp.obj
+
+.PHONY : Solid.obj
+
+# target to build an object file
+Solid.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.obj
+.PHONY : Solid.cpp.obj
+
+Solid.i: Solid.cpp.i
+
+.PHONY : Solid.i
+
+# target to preprocess a source file
+Solid.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.i
+.PHONY : Solid.cpp.i
+
+Solid.s: Solid.cpp.s
+
+.PHONY : Solid.s
+
+# target to generate assembly for a file
+Solid.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.s
+.PHONY : Solid.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -188,6 +215,9 @@ help:
 	@echo ... InitWindow.obj
 	@echo ... InitWindow.i
 	@echo ... InitWindow.s
+	@echo ... Solid.obj
+	@echo ... Solid.i
+	@echo ... Solid.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

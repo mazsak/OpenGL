@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "InitWindow.h"
+#include "Solid.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -28,9 +29,11 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
+    Triangle *triangle = new Triangle();
     do {
         glClear(GL_COLOR_BUFFER_BIT);
 
+        triangle->drawTriangle();
 
         glfwSwapBuffers(InitWindow::window);
         glfwPollEvents();
