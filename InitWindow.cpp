@@ -1,10 +1,11 @@
 #include "InitWindow.h"
-#include <cstdio>
-#include <string>
+#include <stdio.h>
+#include <stdlib.h>
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 
 InitWindow::InitWindow(int width, int height, const char *nameWindow, GLFWmonitor *monitor, GLFWwindow *share) {
+
     if (!glfwInit()) {
         fprintf(stderr, "Failed to initialize GLFW\n");
         return;
@@ -15,31 +16,56 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow, GLFWmonito
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 
-    window = glfwCreateWindow(width, height, nameWindow, monitor, share);
+    InitWindow::window = glfwCreateWindow(width, height, nameWindow, monitor, share);
 
-    if (window == NULL) {
+    if (InitWindow::window == NULL) {
         fprintf(stderr,"Failed to open GLFW window. If you have an Intel GPU, they are not 3.3 compatible. Try the 2.1 version of the tutorials.\n");
         glfwTerminate();
         return;
     }
 
-    glfwMakeContextCurrent(window);
+    glfwMakeContextCurrent(InitWindow::window);
+    glewExperimental = true;
     if (glewInit() != GLEW_OK) {
         fprintf(stderr, "Failed to initialize GLEW\n");
         return;
     }
 
-    glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
+    glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
 }
 
 GLFWwindow* InitWindow::getWindow() {
-    return window;
-}
-
-void InitWindow::setBackground(GLclampf read, GLclampf green, GLclampf blue, GLclampf alpha) {
-    glClearColor(read, green,blue,alpha);
+    return InitWindow::window;
 }
 
 void InitWindow::mainLoop() {
+    do {
+        glClear(GL_COLOR_BUFFER_BIT);
 
+
+        glfwSwapBuffers(InitWindow::window);
+        glfwPollEvents();
+
+    } while (glfwGetKey(InitWindow::window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
+             glfwWindowShouldClose(InitWindow::window) == 0);
+}
+
+void InitWindow::setRed(GLclampf red) {
+    InitWindow::red = red;
+    glClearColor(InitWindow::red, InitWindow::green, InitWindow::blue, InitWindow::alpha);
+}
+
+void InitWindow::setGreen(GLclampf green) {
+    InitWindow::green = green;
+    glClearColor(InitWindow::red, InitWindow::green, InitWindow::blue, InitWindow::alpha);
+}
+
+void InitWindow::setBlue(GLclampf blue) {
+    InitWindow::blue = blue;
+    glClearColor(InitWindow::red, InitWindow::green, InitWindow::blue, InitWindow::alpha);
+}
+
+void InitWindow::setAlpha(GLclampf alpha) {
+    InitWindow::alpha = alpha;
+    glClearColor(InitWindow::red, InitWindow::green, InitWindow::blue, InitWindow::alpha);
 }

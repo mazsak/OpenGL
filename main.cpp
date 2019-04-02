@@ -9,18 +9,9 @@
 using namespace glm;
 
 int main() {
-
-    do {
-        // Clear the screen. It's not mentioned before Tutorial 02, but it can cause flickering, so it's there nonetheless.
-        glClear(GL_COLOR_BUFFER_BIT);
-
-        // Draw nothing, see you in tutorial 2 !
-
-        // Swap buffers
-        glfwSwapBuffers(window);
-        glfwPollEvents();
-
-    } // Check if the ESC key was pressed or the window was closed
-    while (glfwGetKey(window, GLFW_KEY_E) != GLFW_PRESS &&
-           glfwWindowShouldClose(window) == 0);
+    int width = 1366, height = 768;
+    const char *name = "First app with OpenGL";
+    //auto *mainObject = new InitWindow(width, height, name, NULL, NULL);
+    //mainObject->setRed(0.5f);
+    //mainObject->mainLoop();
 }

@@ -10,16 +10,22 @@
 class InitWindow {
 private:
     GLFWwindow *window;
-    GLclampf red;
-    GLclampf green;
-    GLclampf blue;
-    GLclampf alpha;
+    GLclampf red = 0.0f;
+    GLclampf green = 0.0f;
+    GLclampf blue = 0.0f;
+    GLclampf alpha = 0.0f;
 public:
     InitWindow(int width, int height, const char *nameWindow, GLFWmonitor *monitor, GLFWwindow *share);
 
     GLFWwindow* getWindow();
 
-    void setBackground(GLclampf read, GLclampf green, GLclampf blue, GLclampf alpha);
+    void setRed(GLclampf red);
+
+    void setGreen(GLclampf green);
+
+    void setBlue(GLclampf blue);
+
+    void setAlpha(GLclampf alpha);
 
     void mainLoop();
 };
