@@ -15,9 +15,9 @@ private:
     GLclampf blue = 0.0f;
     GLclampf alpha = 0.0f;
 public:
-    InitWindow(int width, int height, const char *nameWindow, GLFWmonitor *monitor, GLFWwindow *share);
+    InitWindow(int width, int height, const char *nameWindow);
 
-    GLFWwindow* getWindow();
+    GLFWwindow *getWindow() const;
 
     void setRed(GLclampf red);
 
