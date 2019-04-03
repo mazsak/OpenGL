@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = E:\ToolBox\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = E:\ToolBox\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Project_CLoin\OpenGL
+CMAKE_SOURCE_DIR = D:\Projects\C++\CLion\OpenGL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Project_CLoin\OpenGL\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Projects\C++\CLion\OpenGL\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = E:\Project_CLoin\OpenGL\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	E:\ToolBox\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	D:\Programs\ToolboxApps\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	E:\ToolBox\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	D:\Programs\ToolboxApps\apps\CLion\ch-0\191.6183.77\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -149,6 +149,33 @@ InitWindow.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.s
 .PHONY : InitWindow.cpp.s
 
+Shader.obj: Shader.cpp.obj
+
+.PHONY : Shader.obj
+
+# target to build an object file
+Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.obj
+.PHONY : Shader.cpp.obj
+
+Shader.i: Shader.cpp.i
+
+.PHONY : Shader.i
+
+# target to preprocess a source file
+Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.i
+.PHONY : Shader.cpp.i
+
+Shader.s: Shader.cpp.s
+
+.PHONY : Shader.s
+
+# target to generate assembly for a file
+Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.s
+.PHONY : Shader.cpp.s
+
 Solid.obj: Solid.cpp.obj
 
 .PHONY : Solid.obj
@@ -215,6 +242,9 @@ help:
 	@echo ... InitWindow.obj
 	@echo ... InitWindow.i
 	@echo ... InitWindow.s
+	@echo ... Shader.obj
+	@echo ... Shader.i
+	@echo ... Shader.s
 	@echo ... Solid.obj
 	@echo ... Solid.i
 	@echo ... Solid.s

@@ -5,10 +5,21 @@ CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../glew-2.1.0/include/GL/glew.h
 CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../InitWindow.cpp
 CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../InitWindow.h
+CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../Solid.h
+
+CMakeFiles/OpenGL.dir/Shader.cpp.obj: ../glew-2.1.0/include/GL/glew.h
+CMakeFiles/OpenGL.dir/Shader.cpp.obj: ../Shader.cpp
+CMakeFiles/OpenGL.dir/Shader.cpp.obj: ../Shader.h
+
+CMakeFiles/OpenGL.dir/Solid.cpp.obj: ../glew-2.1.0/include/GL/glew.h
+CMakeFiles/OpenGL.dir/Solid.cpp.obj: ../Shader.h
+CMakeFiles/OpenGL.dir/Solid.cpp.obj: ../Solid.cpp
+CMakeFiles/OpenGL.dir/Solid.cpp.obj: ../Solid.h
 
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../glew-2.1.0/include/GL/glew.h
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../InitWindow.h
+CMakeFiles/OpenGL.dir/main.cpp.obj: ../Shader.h
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../glm/glm/common.hpp
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../glm/glm/detail/_fixes.hpp
 CMakeFiles/OpenGL.dir/main.cpp.obj: ../glm/glm/detail/_swizzle.hpp
