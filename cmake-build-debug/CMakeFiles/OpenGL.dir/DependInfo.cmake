@@ -4,10 +4,11 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Projects/C++/CLion/OpenGL/InitWindow.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/InitWindow.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/Shader.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Shader.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/Solid.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Solid.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/main.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/main.cpp.obj"
+  "E:/Project_CLoin/OpenGL/Camera.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Camera.cpp.obj"
+  "E:/Project_CLoin/OpenGL/InitWindow.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/InitWindow.cpp.obj"
+  "E:/Project_CLoin/OpenGL/Shader.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Shader.cpp.obj"
+  "E:/Project_CLoin/OpenGL/Solid.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Solid.cpp.obj"
+  "E:/Project_CLoin/OpenGL/main.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

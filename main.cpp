@@ -10,7 +10,7 @@
 using namespace glm;
 
 int main() {
-    int width = 1366, height = 768;
+    int width = 1280, height = 960;
     const char *name = "First app with OpenGL";
     InitWindow *initWindow = new InitWindow(width, height, name);
     initWindow->setBlue(0.7f);

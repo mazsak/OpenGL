@@ -1,8 +1,9 @@
 #include <GL/glew.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "InitWindow.h"
 #include "Solid.h"
+#include "InitWindow.h"
+#include "Shader.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -29,12 +30,18 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    Triangle *triangle = new Triangle();
+    GLfloat array[] = {0.0f, 0.7f, 0.0f};
+    Prism *prism = new Prism(array, 0.35f, 0.5f, 6);
+    //Triangle *triangle = new Triangle;
     do {
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        triangle->drawTriangle();
+        glUseProgram(programID);
+        camera->move(&window);
+        prism->drawPrism();
+        //triangle->drawTriangle();
 
+        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
         glfwSwapBuffers(InitWindow::window);
         glfwPollEvents();
 
@@ -69,5 +76,10 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     }
 
     glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
+    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\SimpleVertexShader.vertexshader)",
+                            R"(E:\Project_CLoin\OpenGL\SimpleFragmentShader.fragmentshader)");
+
+    camera = new Camera(width, height);
+    MatrixID = glGetUniformLocation(programID, "MVP");
 }
 
