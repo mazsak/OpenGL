@@ -36,6 +36,7 @@ Camera::Camera(float width, float height) {
     );
     Model = glm::mat4(1.0f);
     mvp = Projection * View * Model;
+    position = glm::vec3(0, 0, 0);
 }
 
 const glm::mat4 &Camera::getMvp() const {
@@ -50,8 +51,7 @@ void Camera::move(GLFWwindow **window) {
 
     float anglex = 3.14f, angley = 0.0f, anglez = 0.0f;
 
-    glm::vec3 position = glm::vec3(0, 0, 0);
-    float speed = 1.0f;
+    float speed = 3.0f;
 
     int xpos = 0, ypos = 0, zpos = 0;
 
@@ -89,8 +89,12 @@ void Camera::move(GLFWwindow **window) {
         position -= right * deltaTime * speed;
     }
 
+    if (glfwGetKey(*window, GLFW_KEY_Q) == GLFW_PRESS) {
+        xpos -= right * deltaTime * speed;
+    }
+
     glm::mat4 model = glm::translate(glm::mat4(1.0f), position);
-    setModel(model);
+    Camera::setModel(model);
 
     lastTime = currentTime;
 }

@@ -31,16 +31,15 @@ void Triangle::drawTriangle() {
 }
 
 Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVerticesBasis) {
-
     Prism::numberOfVertices = numberOfVerticesBasis * 12;
     GLfloat matrix[numberOfVertices * 3];
 
-    float angle = 360 / (numberOfVerticesBasis * 2);
-    GLfloat vertices[6][2];
+    float angle = M_PI * 2 / (numberOfVerticesBasis);
+    GLfloat vertices[numberOfVerticesBasis][2];
 
     for (int i = 0; i < numberOfVerticesBasis; i++) {
-        vertices[i][0] = radius * (GLfloat) std::cos(angle * i);
-        vertices[i][1] = radius * (GLfloat) std::sin(angle * i);
+        vertices[i][0] = radius * glm::cos(angle * i);
+        vertices[i][1] = radius * glm::sin(angle * i);
     }
 
     int counter = 0;
@@ -49,7 +48,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
         matrix[counter++] = vertices[i][0];
         matrix[counter++] = point[1];
         matrix[counter++] = vertices[i][1];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         if (i + 1 < numberOfVerticesBasis) {
             matrix[counter++] = vertices[i + 1][0];
             matrix[counter++] = point[1];
@@ -59,11 +58,11 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
             matrix[counter++] = point[1];
             matrix[counter++] = vertices[0][1];
         }
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         matrix[counter++] = point[0];
         matrix[counter++] = point[1];
         matrix[counter++] = point[2];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
     }
 
     //basis down
@@ -71,7 +70,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
         matrix[counter++] = vertices[i][0];
         matrix[counter++] = point[1] - height;
         matrix[counter++] = vertices[i][1];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         if (i + 1 < numberOfVerticesBasis) {
             matrix[counter++] = vertices[i + 1][0];
             matrix[counter++] = point[1] - height;
@@ -81,11 +80,11 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
             matrix[counter++] = point[1] - height;
             matrix[counter++] = vertices[0][1];
         }
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         matrix[counter++] = point[0];
         matrix[counter++] = point[1] - height;
         matrix[counter++] = point[2];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
     }
 
     for (int i = 0; i < numberOfVerticesBasis; i++) {
@@ -93,7 +92,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
         matrix[counter++] = vertices[i][0];
         matrix[counter++] = point[1];
         matrix[counter++] = vertices[i][1];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         if (i + 1 < numberOfVerticesBasis) {
             matrix[counter++] = vertices[i + 1][0];
             matrix[counter++] = point[1];
@@ -103,16 +102,16 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
             matrix[counter++] = point[1];
             matrix[counter++] = vertices[0][1];
         }
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         matrix[counter++] = vertices[i][0];
         matrix[counter++] = point[1] - height;
         matrix[counter++] = vertices[i][1];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         //down triangle
         matrix[counter++] = vertices[i][0];
         matrix[counter++] = point[1] - height;
         matrix[counter++] = vertices[i][1];
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         if (i + 1 < numberOfVerticesBasis) {
             matrix[counter++] = vertices[i + 1][0];
             matrix[counter++] = point[1] - height;
@@ -122,7 +121,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
             matrix[counter++] = point[1] - height;
             matrix[counter++] = vertices[0][1];
         }
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
         if (i + 1 < numberOfVerticesBasis) {
             matrix[counter++] = vertices[i + 1][0];
             matrix[counter++] = point[1];
@@ -132,7 +131,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
             matrix[counter++] = point[1];
             matrix[counter++] = vertices[0][1];
         }
-        std::cout << matrix[counter - 3] << ", " << matrix[counter - 2] << ", " << matrix[counter - 1] << std::endl;
+
     }
 
     glGenVertexArrays(1, &VertexArrayID);

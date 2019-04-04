@@ -2,6 +2,7 @@
 #define OPENGL_CAMERA_H
 
 #include "glm/glm/detail/type_mat4x4.hpp"
+#include "glm/glm/vec3.hpp"
 
 class Camera {
 private:
@@ -10,6 +11,7 @@ private:
     glm::mat4 View;
     glm::mat4 Model;
     glm::mat4 mvp;
+    glm::vec3 position;
 
 public:
     const glm::mat4 &getMvp() const;
