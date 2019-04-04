@@ -5,6 +5,7 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
 #include "Camera.h"
+#include "glm/glm/gtx/transform.hpp"
 #include "glm/glm/gtc/matrix_transform.hpp"
 
 void Camera::setProjection(GLfloat angle, float width, float height, GLfloat min, GLfloat max) {
@@ -53,8 +54,6 @@ void Camera::move(GLFWwindow **window) {
 
     float speed = 3.0f;
 
-    int xpos = 0, ypos = 0, zpos = 0;
-
     anglex += speed * deltaTime * float(0 - xpos);
     angley += speed * deltaTime * float(0 - ypos);
     anglez += speed * deltaTime * float(0 - zpos);
@@ -73,6 +72,7 @@ void Camera::move(GLFWwindow **window) {
 
     glm::vec3 up = glm::cross(right, direction);
 
+    //run
     if (glfwGetKey(*window, GLFW_KEY_UP) == GLFW_PRESS) {
         position += direction * deltaTime * speed;
     }
@@ -89,11 +89,59 @@ void Camera::move(GLFWwindow **window) {
         position -= right * deltaTime * speed;
     }
 
-    if (glfwGetKey(*window, GLFW_KEY_Q) == GLFW_PRESS) {
-        xpos -= right * deltaTime * speed;
+    if (glfwGetKey(*window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
+        position += up * deltaTime * speed;
     }
 
-    glm::mat4 model = glm::translate(glm::mat4(1.0f), position);
+    if (glfwGetKey(*window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
+        position -= up * deltaTime * speed;
+    }
+
+    float speedRotation = speed * 10;
+
+    //rotation
+    if (glfwGetKey(*window, GLFW_KEY_KP_8) == GLFW_PRESS) {
+        xpos += speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_KP_2) == GLFW_PRESS) {
+        xpos -= speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_KP_6) == GLFW_PRESS) {
+        ypos += speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_KP_4) == GLFW_PRESS) {
+        ypos -= speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_KP_7) == GLFW_PRESS) {
+        zpos += speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_KP_9) == GLFW_PRESS) {
+        zpos -= speedRotation * deltaTime;
+    }
+
+    if (glfwGetKey(*window, GLFW_KEY_Q) == GLFW_PRESS) {
+        xpos = 0;
+        ypos = 0;
+        zpos = 0;
+    }
+
+    glm::mat4 translationModel = glm::translate(glm::mat4(1.0f), position);
+    glm::mat4 rotationModelX = glm::mat4(1, 0, 0, 0, 0, glm::cos(anglex), -glm::sin(anglex), 0, 0, glm::sin(anglex),
+                                         glm::cos(anglex), 0, 0,
+                                         0, 0, 1);
+    glm::mat4 rotationModelY = glm::mat4(glm::cos(angley), 0, glm::sin(angley), 0, 0, 1, 0, 0, -glm::sin(angley), 0,
+                                         glm::cos(angley), 0, 0,
+                                         0, 0, 1);
+    glm::mat4 rotationModelZ = glm::mat4(glm::cos(anglez), -glm::sin(anglez), 0, 0, glm::sin(anglez), glm::cos(anglez),
+                                         0, 0, 0, 0, 1, 0, 0,
+                                         0, 0, 1);
+    glm::mat4 rotationModel = rotationModelX * rotationModelY * rotationModelZ;
+    glm::mat4 model = translationModel * rotationModel;
     Camera::setModel(model);
 
     lastTime = currentTime;

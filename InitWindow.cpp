@@ -31,7 +31,7 @@ void InitWindow::setAlpha(GLclampf alpha) {
 
 void InitWindow::mainLoop() {
     GLfloat array[] = {0.0f, 0.7f, 0.0f};
-    Prism *prism = new Prism(array, 0.35f, 0.5f, 3);
+    Prism *prism = new Prism(array, 0.35f, 0.5f, 18);
     //Triangle *triangle = new Triangle;
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -50,6 +50,7 @@ void InitWindow::mainLoop() {
 }
 
 InitWindow::InitWindow(int width, int height, const char *nameWindow) {
+    glewExperimental = true;
     if (!glfwInit()) {
         fprintf(stderr, "Failed to initialize GLFW\n");
         return;
@@ -70,6 +71,7 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     }
 
     glfwMakeContextCurrent(InitWindow::window);
+    glewExperimental = true;
     if (glewInit() != GLEW_OK) {
         fprintf(stderr, "Failed to initialize GLEW\n");
         return;
