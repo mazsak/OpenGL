@@ -4,6 +4,7 @@
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
+#include <iostream>
 #include "Camera.h"
 #include "glm/glm/gtx/transform.hpp"
 #include "glm/glm/gtc/matrix_transform.hpp"
@@ -50,13 +51,18 @@ void Camera::move(GLFWwindow **window) {
 
     float deltaTime = float(currentTime - lastTime);
 
-    float anglex = 3.14f, angley = 0.0f, anglez = 0.0f;
+    float anglex = 3.14f, angley = 0.0f;
+    float anglexR = 3.14f, angleyR = 0.0f, anglezR = 0.0f;
 
     float speed = 3.0f;
+    float speedRotation = speed * 2;
 
     anglex += speed * deltaTime * float(0 - xpos);
     angley += speed * deltaTime * float(0 - ypos);
-    anglez += speed * deltaTime * float(0 - zpos);
+
+    anglexR += float(0 - xpos);
+    angleyR += float(0 - ypos);
+    anglezR += float(0 - zpos);
 
     glm::vec3 direction(
             cos(angley) * sin(anglex),
@@ -97,7 +103,6 @@ void Camera::move(GLFWwindow **window) {
         position -= up * deltaTime * speed;
     }
 
-    float speedRotation = speed * 10;
 
     //rotation
     if (glfwGetKey(*window, GLFW_KEY_KP_8) == GLFW_PRESS) {
@@ -128,16 +133,18 @@ void Camera::move(GLFWwindow **window) {
         xpos = 0;
         ypos = 0;
         zpos = 0;
+        position = glm::vec3(0, 0, 0);
     }
 
     glm::mat4 translationModel = glm::translate(glm::mat4(1.0f), position);
-    glm::mat4 rotationModelX = glm::mat4(1, 0, 0, 0, 0, glm::cos(anglex), -glm::sin(anglex), 0, 0, glm::sin(anglex),
-                                         glm::cos(anglex), 0, 0,
+    glm::mat4 rotationModelX = glm::mat4(1, 0, 0, 0, 0, glm::cos(anglexR), -glm::sin(anglexR), 0, 0, glm::sin(anglexR),
+                                         glm::cos(anglexR), 0, 0,
                                          0, 0, 1);
-    glm::mat4 rotationModelY = glm::mat4(glm::cos(angley), 0, glm::sin(angley), 0, 0, 1, 0, 0, -glm::sin(angley), 0,
-                                         glm::cos(angley), 0, 0,
+    glm::mat4 rotationModelY = glm::mat4(glm::cos(angleyR), 0, glm::sin(angleyR), 0, 0, 1, 0, 0, -glm::sin(angleyR), 0,
+                                         glm::cos(angleyR), 0, 0,
                                          0, 0, 1);
-    glm::mat4 rotationModelZ = glm::mat4(glm::cos(anglez), -glm::sin(anglez), 0, 0, glm::sin(anglez), glm::cos(anglez),
+    glm::mat4 rotationModelZ = glm::mat4(glm::cos(anglezR), -glm::sin(anglezR), 0, 0, glm::sin(anglezR),
+                                         glm::cos(anglezR),
                                          0, 0, 0, 0, 1, 0, 0,
                                          0, 0, 1);
     glm::mat4 rotationModel = rotationModelX * rotationModelY * rotationModelZ;

@@ -30,8 +30,8 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    GLfloat array[] = {0.0f, 0.7f, 0.0f};
-    Prism *prism = new Prism(array, 0.35f, 0.5f, 18);
+    GLfloat array[] = {0.0f, 0.5f, 0.0f};
+    Prism *prism = new Prism(array, 0.5f, 1.0f, 18);
     //Triangle *triangle = new Triangle;
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -78,10 +78,14 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     }
 
     glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
-    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\SimpleVertexShader.vertexshader)",
-                            R"(E:\Project_CLoin\OpenGL\SimpleFragmentShader.fragmentshader)");
+    programID = LoadShaders(R"(D:\Projects\C++\CLion\OpenGL\TransformVertexShader.vertexshader)",
+                            R"(D:\Projects\C++\CLion\OpenGL\ColorFragmentShader.fragmentshader)");
 
     camera = new Camera(width, height);
     MatrixID = glGetUniformLocation(programID, "MVP");
+
+    glEnable(GL_DEPTH_TEST);
+
+    glDepthFunc(GL_LESS);
 }
 

@@ -25,6 +25,7 @@ class Prism {
 private:
     GLuint VertexArrayID;
     GLuint vertexBuffer;
+    GLuint colorBuffer;
     int numberOfVertices;
 
 public:

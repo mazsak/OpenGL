@@ -12,7 +12,7 @@ private:
     glm::mat4 Model;
     glm::mat4 mvp;
     glm::vec3 position;
-    float xpos = 0, ypos = 0, zpos = 0;
+    float xpos = 0.0f, ypos = 0.0f, zpos = 0.0f;
 
 public:
     const glm::mat4 &getMvp() const;
