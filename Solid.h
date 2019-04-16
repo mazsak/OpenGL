@@ -36,7 +36,6 @@ public:
 
     void drawPrism();
 
-    GLuint loadBMP_custom(const char * imagepath);
 };
 
 class Model {
