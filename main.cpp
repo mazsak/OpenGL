@@ -14,6 +14,7 @@ int main() {
     const char *name = "First app with OpenGL";
     InitWindow *initWindow = new InitWindow(width, height, name);
     initWindow->setBlue(0.7f);
+    initWindow->setGreen(0.2f);
     initWindow->setAlpha(1.0f);
     initWindow->mainLoop();
 }

@@ -27,12 +27,16 @@ class Prism {
 private:
     GLuint VertexArrayID;
     GLuint vertexBuffer;
+    GLuint colorBuffer;
+    GLuint textureID;
     int numberOfVertices;
 
 public:
     Prism(GLfloat point[3], GLfloat radius, GLfloat height, int numberOfVerticesBasis);
 
     void drawPrism();
+
+    GLuint loadBMP_custom(const char * imagepath);
 };
 
 class Model {

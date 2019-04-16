@@ -5,6 +5,7 @@ CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glew-2.1.0/include/GL/glew.h
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../Camera.cpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../Camera.h
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/common.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/_fixes.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/_swizzle.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/_swizzle_func.hpp
@@ -15,8 +16,12 @@ CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_exponential.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_exponential.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_geometric.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_geometric.inl
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_integer.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_integer.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_matrix.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_matrix.inl
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_packing.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_packing.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_trigonometric.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_trigonometric.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_vector_relational.hpp
@@ -24,6 +29,8 @@ CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/func_vector_relational.i
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/precision.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/setup.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_float.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_half.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_half.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_int.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_mat.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_mat2x2.hpp
@@ -56,12 +63,17 @@ CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_vec4.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_vec4_avx.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_vec4_avx2.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/detail/type_vec4_sse2.inl
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/exponential.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/fwd.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/geometric.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/glm.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtc/constants.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtc/constants.inl
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtc/matrix_transform.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtc/matrix_transform.inl
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtx/transform.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/gtx/transform.inl
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/integer.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat2x2.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat2x3.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat2x4.hpp
@@ -72,10 +84,12 @@ CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat4x2.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat4x3.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/mat4x4.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/matrix.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/packing.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/trigonometric.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/vec2.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/vec3.hpp
 CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/vec4.hpp
+CMakeFiles/OpenGL.dir/Camera.cpp.obj: ../glm/glm/vector_relational.hpp
 
 CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../glew-2.1.0/include/GL/glew.h
 CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h

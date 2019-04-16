@@ -33,7 +33,7 @@ void InitWindow::mainLoop() {
     GLfloat array[] = {0.0f, 0.7f, 0.0f};
     Model *model = new Model((char *) R"(E:\Project_CLoin\OpenGL\stump.obj)", (char *) "stump.bmp");
     model->loadModel();
-    //Triangle *triangle = new Triangle;
+
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -81,10 +81,14 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     }
 
     glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
+
     programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\VertexShader.vertexshader)",
                             R"(E:\Project_CLoin\OpenGL\FragmentShader.fragmentshader)");
-
     camera = new Camera(width, height);
     MatrixID = glGetUniformLocation(programID, "MVP");
+
+    glEnable(GL_DEPTH_TEST);
+
+    glDepthFunc(GL_LESS);
 }
 
