@@ -30,23 +30,26 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    GLfloat array[] = {0.0f, 0.5f, 0.0f};
-    Prism *prism = new Prism(array, 0.5f, 1.0f, 5000);
-    //Triangle *triangle = new Triangle;
+    GLfloat array[] = {0.0f, 0.7f, 0.0f};
+    Model *model = new Model((char *) R"(E:\Project_CLoin\OpenGL\stump.obj)", (char *) "stump.bmp");
+    model->loadModel();
+
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(programID);
-        camera->move(&window);
-        prism->drawPrism();
-        //triangle->drawTriangle();
-
         glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
+        camera->move(&window);
+        model->drawModel();
+
+
         glfwSwapBuffers(InitWindow::window);
         glfwPollEvents();
 
     } while (glfwGetKey(InitWindow::window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
              glfwWindowShouldClose(InitWindow::window) == 0);
+
+    glfwTerminate();
 }
 
 InitWindow::InitWindow(int width, int height, const char *nameWindow) {
@@ -78,9 +81,9 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     }
 
     glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
-    programID = LoadShaders(R"(D:\Projects\C++\CLion\OpenGL\TransformVertexShader.vertexshader)",
-                            R"(D:\Projects\C++\CLion\OpenGL\ColorFragmentShader.fragmentshader)");
 
+    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\VertexShader.vertexshader)",
+                            R"(E:\Project_CLoin\OpenGL\FragmentShader.fragmentshader)");
     camera = new Camera(width, height);
     MatrixID = glGetUniformLocation(programID, "MVP");
 
