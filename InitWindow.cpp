@@ -31,7 +31,7 @@ void InitWindow::setAlpha(GLclampf alpha) {
 
 void InitWindow::mainLoop() {
     GLfloat array[] = {0.0f, 0.5f, 0.0f};
-    Prism *prism = new Prism(array, 0.5f, 1.0f, 18);
+    Prism *prism = new Prism(array, 0.5f, 1.0f, 5000);
     //Triangle *triangle = new Triangle;
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
