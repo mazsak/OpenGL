@@ -26,6 +26,10 @@ public:
     void setModel(glm::mat4 model);
 
     void move(GLFWwindow **window);
+
+    const glm::mat4 &getView() const;
+
+    const glm::mat4 &getModel() const;
 };
 
 

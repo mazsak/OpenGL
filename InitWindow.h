@@ -11,9 +11,15 @@ private:
     GLclampf green = 0.0f;
     GLclampf blue = 0.0f;
     GLclampf alpha = 0.0f;
+    GLuint VertexArrayID;
     GLuint programID;
     Camera *camera;
     GLuint MatrixID;
+    GLuint ViewMatrixID;
+    GLuint ModelMatrixID;
+    GLuint LightID;
+    GLuint TextureID;
+
 public:
     InitWindow(int width, int height, const char *nameWindow);
 

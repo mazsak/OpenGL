@@ -153,3 +153,11 @@ void Camera::move(GLFWwindow **window) {
 
     lastTime = currentTime;
 }
+
+const glm::mat4 &Camera::getView() const {
+    return View;
+}
+
+const glm::mat4 &Camera::getModel() const {
+    return Model;
+}

@@ -30,16 +30,24 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    GLfloat array[] = {0.0f, 0.7f, 0.0f};
-    Model *model = new Model((char *) R"(E:\Project_CLoin\OpenGL\stump.obj)", (char *) "stump.bmp");
-    model->loadModel();
+    Model *model = new Model((char *) R"(E:\Project_CLoin\OpenGL\stump.obj)",
+                             (char *) R"(E:\Project_CLoin\OpenGL\stump.bmp)");
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(programID);
-        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
         camera->move(&window);
+        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
+        glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &camera->getModel()[0][0]);
+        glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &camera->getView()[0][0]);
+
+        glm::vec3 lightPos = glm::vec3(4,4,4);
+        glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
+
+        glActiveTexture(GL_TEXTURE0);
+        glBindTexture(GL_TEXTURE_2D, model->getTexture());
+        glUniform1i(TextureID, 0);
         model->drawModel();
 
 
@@ -48,6 +56,10 @@ void InitWindow::mainLoop() {
 
     } while (glfwGetKey(InitWindow::window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
              glfwWindowShouldClose(InitWindow::window) == 0);
+
+    model->clear();
+    glDeleteProgram(programID);
+    glDeleteVertexArrays(1, &VertexArrayID);
 
     glfwTerminate();
 }
@@ -82,13 +94,25 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
 
     glfwSetInputMode(InitWindow::window, GLFW_STICKY_KEYS, GL_TRUE);
 
-    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\VertexShader.vertexshader)",
-                            R"(E:\Project_CLoin\OpenGL\FragmentShader.fragmentshader)");
-    camera = new Camera(width, height);
-    MatrixID = glGetUniformLocation(programID, "MVP");
+    glfwPollEvents();
 
     glEnable(GL_DEPTH_TEST);
 
     glDepthFunc(GL_LESS);
+
+    glEnable(GL_CULL_FACE);
+
+    glGenVertexArrays(1, &VertexArrayID);
+    glBindVertexArray(VertexArrayID);
+
+    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\VertexShader.vertexshader)",
+                            R"(E:\Project_CLoin\OpenGL\FragmentShader.fragmentshader)");
+    MatrixID = glGetUniformLocation(programID, "MVP");
+    ViewMatrixID = glGetUniformLocation(programID, "V");
+    ModelMatrixID = glGetUniformLocation(programID, "M");
+    TextureID = glGetUniformLocation(programID, "myTextureSampler");
+    LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
+    camera = new Camera(width, height);
+
 }
 

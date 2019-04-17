@@ -189,6 +189,7 @@ Prism::Prism(GLfloat *point, GLfloat radius, GLfloat height, int numberOfVertice
     glGenBuffers(1, &vertexBuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     glBufferData(GL_ARRAY_BUFFER, sizeof(matrix), matrix, GL_STATIC_DRAW);
+
 }
 
 void Prism::drawPrism() {
@@ -218,7 +219,10 @@ void Prism::drawPrism() {
 }
 
 Model::Model(char *nameFileModel, char *nameFileTexture) : nameFileModel(nameFileModel),
-                                                           nameFileTexture(nameFileTexture) {}
+                                                           nameFileTexture(nameFileTexture) {
+    loadModel();
+    loadTexture();
+}
 
 bool Model::loadModel() {
     std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
@@ -251,7 +255,6 @@ bool Model::loadModel() {
         } else if (strcmp(lineHeader, "vt") == 0) {
             glm::vec2 uv;
             fscanf(file, "%f %f\n", &uv.x, &uv.y);
-            uv.y = -uv.y; // Invert V coordinate since we will only use DDS texture, which are inverted. Remove if you want to use TGA or BMP loaders.
             temp_uvs.push_back(uv);
         } else if (strcmp(lineHeader, "vn") == 0) {
             glm::vec3 normal;
@@ -314,6 +317,10 @@ bool Model::loadModel() {
     glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
     glBufferData(GL_ARRAY_BUFFER, uvs.size() * sizeof(glm::vec2), &uvs[0], GL_STATIC_DRAW);
 
+    glGenBuffers(1, &normalbuffer);
+    glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
+    glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
+
     return true;
 
 }
@@ -342,6 +349,17 @@ void Model::drawModel() {
             (void *) 0                          // array buffer offset
     );
 
+    glEnableVertexAttribArray(2);
+    glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
+    glVertexAttribPointer(
+            2,                                // attribute
+            3,                                // size
+            GL_FLOAT,                         // type
+            GL_FALSE,                         // normalized?
+            0,                                // stride
+            (void*)0                          // array buffer offset
+    );
+
     // Draw the triangle !
     glDrawArrays(GL_TRIANGLES, 0, vertices.size());
 
@@ -359,5 +377,85 @@ void Model::setUvs(const std::vector<glm::vec2> &uvs) {
 
 void Model::setNormals(const std::vector<glm::vec3> &normals) {
     Model::normals = normals;
+}
+
+void Model::loadTexture() {
+    unsigned char header[54];
+    unsigned int dataPos;
+    unsigned int width, height;
+    unsigned int imageSize;
+    unsigned char *data;
+
+    FILE *file = fopen(nameFileTexture, "rb");
+    if (!file) {
+        printf("%s could not be opened. Are you in the right directory ? Don't forget to read the FAQ !\n",
+               nameFileTexture);
+        getchar();
+        return;
+    }
+
+    if (fread(header, 1, 54, file) != 54) {
+        printf("Not a correct BMP file\n");
+        fclose(file);
+        return;
+    }
+    if (header[0] != 'B' || header[1] != 'M') {
+        printf("Not a correct BMP file\n");
+        fclose(file);
+        return;
+    }
+
+    if (*(int *) &(header[0x1E]) != 0) {
+        printf("Not a correct BMP file\n");
+        fclose(file);
+        return;
+    }
+    if (*(int *) &(header[0x1C]) != 24) {
+        printf("Not a correct BMP file\n");
+        fclose(file);
+        return;
+    }
+
+    dataPos = *(int *) &(header[0x0A]);
+    imageSize = *(int *) &(header[0x22]);
+    width = *(int *) &(header[0x12]);
+    height = *(int *) &(header[0x16]);
+
+    if (imageSize == 0)
+        imageSize = width * height * 3;
+    if (dataPos == 0)
+        dataPos = 54;
+
+    data = new unsigned char[imageSize];
+
+    fread(data, 1, imageSize, file);
+
+    fclose(file);
+
+    glGenTextures(1, &Texture);
+
+    glBindTexture(GL_TEXTURE_2D, Texture);
+
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+
+    delete[] data;
+
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+
+    glGenerateMipmap(GL_TEXTURE_2D);
+}
+
+GLuint Model::getTexture() const {
+    return Texture;
+}
+
+void Model::clear() {
+    glDeleteBuffers(1, &vertexbuffer);
+    glDeleteBuffers(1, &uvbuffer);
+    glDeleteTextures(1, &Texture);
+
 }
 

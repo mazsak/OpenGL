@@ -44,22 +44,30 @@ private:
     char *nameFileTexture;
     GLuint vertexbuffer;
     GLuint uvbuffer;
+    GLuint normalbuffer;
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec2> uvs;
     std::vector<glm::vec3> normals;
+    GLuint Texture;
+
+    bool loadModel();
+
+    void loadTexture();
 
 public:
     Model(char *nameFileModel, char *nameFileTexture);
 
-    bool loadModel();
-
     void drawModel();
+
+    void clear();
 
     void setVertices(const std::vector<glm::vec3> &vertices);
 
     void setUvs(const std::vector<glm::vec2> &uvs);
 
     void setNormals(const std::vector<glm::vec3> &normals);
+
+    GLuint getTexture() const;
 
 };
 
