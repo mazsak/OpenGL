@@ -19,6 +19,7 @@ private:
     GLuint ModelMatrixID;
     GLuint LightID;
     GLuint TextureID;
+    GLuint chooseID;
 
 public:
     InitWindow(int width, int height, const char *nameWindow);

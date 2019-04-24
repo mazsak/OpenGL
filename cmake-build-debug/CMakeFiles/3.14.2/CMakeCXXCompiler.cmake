@@ -23,6 +23,7 @@ set(CMAKE_CXX_COMPILER_AR "D:/Programs/MinGW/bin/gcc-ar.exe")
 set(CMAKE_RANLIB "D:/Programs/MinGW/bin/ranlib.exe")
 set(CMAKE_CXX_COMPILER_RANLIB "D:/Programs/MinGW/bin/gcc-ranlib.exe")
 set(CMAKE_LINKER "D:/Programs/MinGW/bin/ld.exe")
+set(CMAKE_MT "")
 set(CMAKE_COMPILER_IS_GNUCXX 1)
 set(CMAKE_CXX_COMPILER_LOADED 1)
 set(CMAKE_CXX_COMPILER_WORKS TRUE)
@@ -71,6 +72,7 @@ endif()
 
 
 
+set(CMAKE_CXX_IMPLICIT_INCLUDE_DIRECTORIES "D:/Programs/MinGW/lib/gcc/mingw32/8.2.0/include/c++;D:/Programs/MinGW/lib/gcc/mingw32/8.2.0/include/c++/mingw32;D:/Programs/MinGW/lib/gcc/mingw32/8.2.0/include/c++/backward;D:/Programs/MinGW/lib/gcc/mingw32/8.2.0/include;D:/Programs/MinGW/include;D:/Programs/MinGW/lib/gcc/mingw32/8.2.0/include-fixed")
 set(CMAKE_CXX_IMPLICIT_LINK_LIBRARIES "stdc++;mingw32;gcc_s;gcc;moldname;mingwex;advapi32;shell32;user32;kernel32;mingw32;gcc_s;gcc;moldname;mingwex")
 set(CMAKE_CXX_IMPLICIT_LINK_DIRECTORIES "D:/Programs/MinGW/lib/gcc/mingw32/8.2.0;D:/Programs/MinGW/lib/gcc;D:/Programs/MinGW/mingw32/lib;D:/Programs/MinGW/lib")
 set(CMAKE_CXX_IMPLICIT_LINK_FRAMEWORK_DIRECTORIES "")

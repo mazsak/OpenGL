@@ -30,9 +30,10 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    Model *model = new Model((char *) R"(E:\Project_CLoin\OpenGL\stump.obj)",
-                             (char *) R"(E:\Project_CLoin\OpenGL\stump.bmp)");
-
+    int choose = 0;
+    glm::vec3 lightPos = glm::vec3(4, 4, 4);
+    Model *model = new Model((char *) R"(D:\Projects\C++\CLion\OpenGL\stump.obj)",
+                             (char *) R"(D:\Projects\C++\CLion\OpenGL\stump.bmp)");
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -41,9 +42,37 @@ void InitWindow::mainLoop() {
         glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
         glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &camera->getModel()[0][0]);
         glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &camera->getView()[0][0]);
-
-        glm::vec3 lightPos = glm::vec3(4,4,4);
         glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
+        glUniform1i(chooseID, choose);
+
+        if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
+            choose = 1;
+        }
+        if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
+            choose = 2;
+        }
+        if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
+            choose = 3;
+        }
+        if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) {
+            choose = 4;
+        }
+        if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS) {
+            lightPos.z += 1;
+        }
+        if (glfwGetKey(window, GLFW_KEY_K) == GLFW_PRESS) {
+            lightPos.z -= 1;
+        }
+        if (glfwGetKey(window, GLFW_KEY_P) == GLFW_PRESS) {
+            lightPos.x += 1;
+        }
+        if (glfwGetKey(window, GLFW_KEY_L) == GLFW_PRESS) {
+            lightPos.x -= 1;
+        }
+        if (glfwGetKey(window, GLFW_KEY_M) == GLFW_PRESS) {
+            lightPos = glm::vec3(4, 4, 4);
+        }
+
 
         glActiveTexture(GL_TEXTURE0);
         glBindTexture(GL_TEXTURE_2D, model->getTexture());
@@ -105,13 +134,14 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
 
-    programID = LoadShaders(R"(E:\Project_CLoin\OpenGL\VertexShader.vertexshader)",
-                            R"(E:\Project_CLoin\OpenGL\FragmentShader.fragmentshader)");
+    programID = LoadShaders(R"(D:\Projects\C++\CLion\OpenGL\VertexShader.cpp)",
+                            R"(D:\Projects\C++\CLion\OpenGL\FragmentShader.cpp)");
     MatrixID = glGetUniformLocation(programID, "MVP");
     ViewMatrixID = glGetUniformLocation(programID, "V");
     ModelMatrixID = glGetUniformLocation(programID, "M");
     TextureID = glGetUniformLocation(programID, "myTextureSampler");
     LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
+    chooseID = glGetUniformLocation(programID, "choose");
     camera = new Camera(width, height);
 
 }

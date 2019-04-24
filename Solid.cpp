@@ -196,22 +196,22 @@ void Prism::drawPrism() {
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexBuffer);
     glVertexAttribPointer(
-            0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-            3,                  // size
-            GL_FLOAT,           // type
-            GL_FALSE,           // normalized?
-            0,                  // stride
-            (void *) 0            // array buffer offset
+            0,
+            3,
+            GL_FLOAT,
+            GL_FALSE,
+            0,
+            (void *) 0
     );
 
     glBindBuffer(GL_ARRAY_BUFFER, colorBuffer);
     glVertexAttribPointer(
-            1,                                // attribute. No particular reason for 1, but must match the layout in the shader.
-            3,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized?
-            0,                                // stride
-            (void *) 0                          // array buffer offset
+            1,
+            3,
+            GL_FLOAT,
+            GL_FALSE,
+            0,
+            (void *) 0
     );
     glDrawArrays(GL_TRIANGLES, 0, Prism::numberOfVertices * 3);
     glDisableVertexAttribArray(0);
@@ -244,9 +244,7 @@ bool Model::loadModel() {
         // read the first word of the line
         int res = fscanf(file, "%s", lineHeader);
         if (res == EOF)
-            break; // EOF = End Of File. Quit the loop.
-
-        // else : parse lineHeader
+            break;
 
         if (strcmp(lineHeader, "v") == 0) {
             glm::vec3 vertex;
@@ -281,30 +279,16 @@ bool Model::loadModel() {
             normalIndices.push_back(normalIndex[1]);
             normalIndices.push_back(normalIndex[2]);
         } else {
-            // Probably a comment, eat up the rest of the line
             char stupidBuffer[1000];
             fgets(stupidBuffer, 1000, file);
         }
 
     }
 
-    // For each vertex of each triangle
     for (unsigned int i = 0; i < vertexIndices.size(); i++) {
-
-        // Get the indices of its attributes
-        unsigned int vertexIndex = vertexIndices[i];
-        unsigned int uvIndex = uvIndices[i];
-        unsigned int normalIndex = normalIndices[i];
-
-        // Get the attributes thanks to the index
-        glm::vec3 vertex = temp_vertices[vertexIndex - 1];
-        glm::vec2 uv = temp_uvs[uvIndex - 1];
-        glm::vec3 normal = temp_normals[normalIndex - 1];
-
-        // Put the attributes in buffers
-        vertices.push_back(vertex);
-        uvs.push_back(uv);
-        normals.push_back(normal);
+        vertices.push_back(temp_vertices[vertexIndices[i] - 1]);
+        uvs.push_back(temp_uvs[uvIndices[i] - 1]);
+        normals.push_back(temp_normals[normalIndices[i] - 1]);
 
     }
     fclose(file);
@@ -329,35 +313,35 @@ void Model::drawModel() {
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
     glVertexAttribPointer(
-            0,                  // attribute
-            3,                  // size
-            GL_FLOAT,           // type
-            GL_FALSE,           // normalized?
-            0,                  // stride
-            (void *) 0            // array buffer offset
+            0,
+            3,
+            GL_FLOAT,
+            GL_FALSE,
+            0,
+            (void *) 0
     );
 
     // 2nd attribute buffer : UVs
     glEnableVertexAttribArray(1);
     glBindBuffer(GL_ARRAY_BUFFER, uvbuffer);
     glVertexAttribPointer(
-            1,                                // attribute
-            2,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized?
-            0,                                // stride
-            (void *) 0                          // array buffer offset
+            1,
+            2,
+            GL_FLOAT,
+            GL_FALSE,
+            0,
+            (void *) 0
     );
 
     glEnableVertexAttribArray(2);
     glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
     glVertexAttribPointer(
-            2,                                // attribute
-            3,                                // size
-            GL_FLOAT,                         // type
-            GL_FALSE,                         // normalized?
-            0,                                // stride
-            (void*)0                          // array buffer offset
+            2,
+            3,
+            GL_FLOAT,
+            GL_FALSE,
+            0,
+            (void*)0
     );
 
     // Draw the triangle !
