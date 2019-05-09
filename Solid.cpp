@@ -1,11 +1,11 @@
 #include <cmath>
 
-#include <cmath>
-
 #include <GL/glew.h>
 #include <cstring>
 #include "Solid.h"
 #include "Shader.h"
+
+#define SIZE 128
 
 Triangle::Triangle() {
     glGenVertexArrays(1, &VertexArrayID);
@@ -229,6 +229,7 @@ bool Model::loadModel() {
     std::vector<glm::vec3> temp_vertices;
     std::vector<glm::vec2> temp_uvs;
     std::vector<glm::vec3> temp_normals;
+    char pathMtl[SIZE];
 
 
     FILE *file = fopen(nameFileModel, "r");
@@ -240,11 +241,12 @@ bool Model::loadModel() {
 
     while (1) {
 
-        char lineHeader[128];
+        char lineHeader[SIZE];
         // read the first word of the line
         int res = fscanf(file, "%s", lineHeader);
         if (res == EOF)
             break;
+
 
         if (strcmp(lineHeader, "v") == 0) {
             glm::vec3 vertex;
@@ -278,6 +280,8 @@ bool Model::loadModel() {
             normalIndices.push_back(normalIndex[0]);
             normalIndices.push_back(normalIndex[1]);
             normalIndices.push_back(normalIndex[2]);
+        } else if (strcmp(lineHeader, "mtllib") == 0) {
+            fscanf(file, "%s\n", pathMtl);
         } else {
             char stupidBuffer[1000];
             fgets(stupidBuffer, 1000, file);
@@ -293,6 +297,8 @@ bool Model::loadModel() {
     }
     fclose(file);
 
+    loadMaterials(pathMtl);
+
     glGenBuffers(1, &vertexbuffer);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
     glBufferData(GL_ARRAY_BUFFER, vertices.size() * sizeof(glm::vec3), &vertices[0], GL_STATIC_DRAW);
@@ -307,6 +313,49 @@ bool Model::loadModel() {
 
     return true;
 
+}
+
+void Model::loadMaterials(char *pathMtl) {
+    FILE *file = fopen(pathMtl, "r");
+    if (file == NULL) {
+        printf("Impossible to open the file !\n");
+        getchar();
+        return;
+    }
+
+    while (1) {
+
+        char lineHeader[SIZE];
+        // read the first word of the line
+        int res = fscanf(file, "%s", lineHeader);
+        if (res == EOF)
+            break;
+
+        if (strcmp(lineHeader, "Ka") == 0) {
+            fscanf(file, "%f %f %f\n", &ambient.x, &ambient.y, &ambient.z);
+        } else if (strcmp(lineHeader, "Kd") == 0) {
+            fscanf(file, "%f %f %f\n", &diffuse.x, &diffuse.y, &diffuse.z);
+        } else if (strcmp(lineHeader, "Ks") == 0) {
+            fscanf(file, "%f %f %f\n", &spectacular.x, &spectacular.y, &spectacular.z);
+        } else {
+            char stupidBuffer[1000];
+            fgets(stupidBuffer, 1000, file);
+        }
+
+    }
+    fclose(file);
+}
+
+const glm::vec3 &Model::getAmbient() const {
+    return ambient;
+}
+
+const glm::vec3 &Model::getDiffuse() const {
+    return diffuse;
+}
+
+const glm::vec3 &Model::getSpectacular() const {
+    return spectacular;
 }
 
 void Model::drawModel() {
@@ -341,7 +390,7 @@ void Model::drawModel() {
             GL_FLOAT,
             GL_FALSE,
             0,
-            (void*)0
+            (void *) 0
     );
 
     // Draw the triangle !

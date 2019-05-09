@@ -42,17 +42,23 @@ class Model {
 private:
     char *nameFileModel;
     char *nameFileTexture;
+    char *nameFileMtl;
     GLuint vertexbuffer;
     GLuint uvbuffer;
     GLuint normalbuffer;
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec2> uvs;
     std::vector<glm::vec3> normals;
+    glm::vec3 ambient;
+    glm::vec3 diffuse;
+    glm::vec3 spectacular;
     GLuint Texture;
 
     bool loadModel();
 
     void loadTexture();
+
+    void loadMaterials(char *pathMtl);
 
 public:
     Model(char *nameFileModel, char *nameFileTexture);
@@ -60,6 +66,12 @@ public:
     void drawModel();
 
     void clear();
+
+    const glm::vec3 &getAmbient() const;
+
+    const glm::vec3 &getDiffuse() const;
+
+    const glm::vec3 &getSpectacular() const;
 
     void setVertices(const std::vector<glm::vec3> &vertices);
 

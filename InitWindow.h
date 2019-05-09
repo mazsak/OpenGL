@@ -20,6 +20,9 @@ private:
     GLuint LightID;
     GLuint TextureID;
     GLuint chooseID;
+    GLuint DiffuseID;
+    GLuint AmbientID;
+    GLuint SpectacularID;
 
 public:
     InitWindow(int width, int height, const char *nameWindow);

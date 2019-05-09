@@ -1,4 +1,4 @@
-D:\Programs\ToolboxApps\apps\CLion\ch-0\191.6707.69\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Projects\C++\CLion\OpenGL
+D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Projects\C++\CLion\OpenGL
 -- The C compiler identification is GNU 8.2.0
 -- The CXX compiler identification is GNU 8.2.0
 -- Check for working C compiler: D:/Programs/MinGW/bin/gcc.exe

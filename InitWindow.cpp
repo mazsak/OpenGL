@@ -43,6 +43,9 @@ void InitWindow::mainLoop() {
         glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &camera->getModel()[0][0]);
         glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &camera->getView()[0][0]);
         glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
+        glUniform3f(DiffuseID, model->getDiffuse().x, model->getDiffuse().y, model->getDiffuse().z);
+        glUniform3f(AmbientID, model->getAmbient().x, model->getAmbient().y, model->getAmbient().z);
+        glUniform3f(SpectacularID, model->getSpectacular().x, model->getSpectacular().y, model->getSpectacular().z);
         glUniform1i(chooseID, choose);
 
         if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
@@ -141,6 +144,9 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     ModelMatrixID = glGetUniformLocation(programID, "M");
     TextureID = glGetUniformLocation(programID, "myTextureSampler");
     LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
+    DiffuseID = glGetUniformLocation(programID, "LightColor");
+    AmbientID = glGetUniformLocation(programID, "AmbientColor");
+    SpectacularID = glGetUniformLocation(programID, "MaterialSpecularColor");
     chooseID = glGetUniformLocation(programID, "choose");
     camera = new Camera(width, height);
 

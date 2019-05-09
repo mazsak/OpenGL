@@ -11,17 +11,21 @@ out vec3 color;
 uniform sampler2D myTextureSampler;
 uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
+uniform vec3
+LightColor;
+uniform vec3
+AmbientColor;
+uniform vec3
+MaterialSpecularColor;
 uniform int choose;
 
 void main(){
 
-	vec3 LightColor = vec3(1,1,1);
 	float LightPower = 50.0f;
 
 
 	vec3 MaterialDiffuseColor = texture( myTextureSampler, UV ).rgb;
-	vec3 MaterialAmbientColor = vec3(0.1,0.1,0.1) * MaterialDiffuseColor;
-	vec3 MaterialSpecularColor = vec3(0.3,0.3,0.3);
+    vec3 MaterialAmbientColor = AmbientColor * MaterialDiffuseColor;
 
 	float distance = length( LightPosition_worldspace - Position_worldspace );
 
