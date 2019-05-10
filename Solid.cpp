@@ -1,3 +1,4 @@
+#include <map>
 #include <cmath>
 
 #include <GL/glew.h>
@@ -224,6 +225,16 @@ Model::Model(char *nameFileModel, char *nameFileTexture) : nameFileModel(nameFil
     loadTexture();
 }
 
+struct PackedIndex {
+    unsigned int v;
+    unsigned int u;
+    unsigned int n;
+
+    bool operator<(const PackedIndex that) const {
+        return memcmp((void *) this, (void *) &that, sizeof(PackedIndex)) > 0;
+    };
+};
+
 bool Model::loadModel() {
     std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
     std::vector<glm::vec3> temp_vertices;
@@ -289,11 +300,22 @@ bool Model::loadModel() {
 
     }
 
+    std::map<PackedIndex, unsigned short> mapIndexs;
+    unsigned short index = 0;
     for (unsigned int i = 0; i < vertexIndices.size(); i++) {
-        vertices.push_back(temp_vertices[vertexIndices[i] - 1]);
-        uvs.push_back(temp_uvs[uvIndices[i] - 1]);
-        normals.push_back(temp_normals[normalIndices[i] - 1]);
+        PackedIndex suspected = {vertexIndices[i], uvIndices[i], normalIndices[i]};
+        std::map<PackedIndex, unsigned short>::iterator it = mapIndexs.find(suspected);
 
+        if (it != mapIndexs.end()) {
+            indexs.push_back(it->second);
+        } else {
+            indexs.push_back(index);
+            mapIndexs[suspected] = index;
+            vertices.push_back(temp_vertices[suspected.v - 1]);
+            uvs.push_back(temp_uvs[suspected.u - 1]);
+            normals.push_back(temp_normals[suspected.n - 1]);
+            index++;
+        }
     }
     fclose(file);
 
@@ -310,6 +332,10 @@ bool Model::loadModel() {
     glGenBuffers(1, &normalbuffer);
     glBindBuffer(GL_ARRAY_BUFFER, normalbuffer);
     glBufferData(GL_ARRAY_BUFFER, normals.size() * sizeof(glm::vec3), &normals[0], GL_STATIC_DRAW);
+
+    glGenBuffers(1, &elementbuffor);
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffor);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indexs.size() * sizeof(unsigned short), &indexs[0], GL_STATIC_DRAW);
 
     return true;
 
@@ -393,11 +419,14 @@ void Model::drawModel() {
             (void *) 0
     );
 
+    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, elementbuffor);
+
     // Draw the triangle !
-    glDrawArrays(GL_TRIANGLES, 0, vertices.size());
+    glDrawElements(GL_TRIANGLES, indexs.size(), GL_UNSIGNED_SHORT, (void *) 0);
 
     glDisableVertexAttribArray(0);
     glDisableVertexAttribArray(1);
+    glDisableVertexAttribArray(2);
 }
 
 void Model::setVertices(const std::vector<glm::vec3> &vertices) {

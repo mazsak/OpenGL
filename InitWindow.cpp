@@ -32,8 +32,10 @@ void InitWindow::setAlpha(GLclampf alpha) {
 void InitWindow::mainLoop() {
     int choose = 0;
     glm::vec3 lightPos = glm::vec3(4, 4, 4);
-    Model *model = new Model((char *) R"(D:\Projects\C++\CLion\OpenGL\stump.obj)",
-                             (char *) R"(D:\Projects\C++\CLion\OpenGL\stump.bmp)");
+    Model *stump = new Model((char *) "stump.obj",
+                             (char *) "stump.bmp");
+    Model *model = new Model((char *) "eye.obj",
+                             (char *) "textur_eye.bmp");
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -82,6 +84,9 @@ void InitWindow::mainLoop() {
         glUniform1i(TextureID, 0);
         model->drawModel();
 
+        glBindTexture(GL_TEXTURE_2D, stump->getTexture());
+        stump->drawModel();
+
 
         glfwSwapBuffers(InitWindow::window);
         glfwPollEvents();
@@ -90,6 +95,7 @@ void InitWindow::mainLoop() {
              glfwWindowShouldClose(InitWindow::window) == 0);
 
     model->clear();
+    stump->clear();
     glDeleteProgram(programID);
     glDeleteVertexArrays(1, &VertexArrayID);
 
@@ -137,8 +143,8 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
 
-    programID = LoadShaders(R"(D:\Projects\C++\CLion\OpenGL\VertexShader.cpp)",
-                            R"(D:\Projects\C++\CLion\OpenGL\FragmentShader.cpp)");
+    programID = LoadShaders("VertexShader.cpp",
+                            "FragmentShader.cpp");
     MatrixID = glGetUniformLocation(programID, "MVP");
     ViewMatrixID = glGetUniformLocation(programID, "V");
     ModelMatrixID = glGetUniformLocation(programID, "M");

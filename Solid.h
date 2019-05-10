@@ -42,13 +42,14 @@ class Model {
 private:
     char *nameFileModel;
     char *nameFileTexture;
-    char *nameFileMtl;
     GLuint vertexbuffer;
     GLuint uvbuffer;
     GLuint normalbuffer;
+    GLuint elementbuffor;
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec2> uvs;
     std::vector<glm::vec3> normals;
+    std::vector<unsigned short> indexs;
     glm::vec3 ambient;
     glm::vec3 diffuse;
     glm::vec3 spectacular;
