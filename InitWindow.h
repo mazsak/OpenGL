@@ -2,7 +2,7 @@
 #define OPENGL_INITWINDOW_H
 
 #include <GLFW/glfw3.h>
-#include "Camera.h"
+#include "code/object/Camera.h"
 
 class InitWindow {
 private:
@@ -12,17 +12,9 @@ private:
     GLclampf blue = 0.0f;
     GLclampf alpha = 0.0f;
     GLuint VertexArrayID;
-    GLuint programID;
-    Camera *camera;
-    GLuint MatrixID;
-    GLuint ViewMatrixID;
-    GLuint ModelMatrixID;
-    GLuint LightID;
-    GLuint TextureID;
-    GLuint chooseID;
-    GLuint DiffuseID;
-    GLuint AmbientID;
-    GLuint SpecularID;
+    Shader *shader;
+    int width;
+    int height;
 
 public:
     InitWindow(int width, int height, const char *nameWindow);

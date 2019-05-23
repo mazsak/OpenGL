@@ -122,33 +122,6 @@ OpenGL/fast:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/build
 .PHONY : OpenGL/fast
 
-Camera.obj: Camera.cpp.obj
-
-.PHONY : Camera.obj
-
-# target to build an object file
-Camera.cpp.obj:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Camera.cpp.obj
-.PHONY : Camera.cpp.obj
-
-Camera.i: Camera.cpp.i
-
-.PHONY : Camera.i
-
-# target to preprocess a source file
-Camera.cpp.i:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Camera.cpp.i
-.PHONY : Camera.cpp.i
-
-Camera.s: Camera.cpp.s
-
-.PHONY : Camera.s
-
-# target to generate assembly for a file
-Camera.cpp.s:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Camera.cpp.s
-.PHONY : Camera.cpp.s
-
 InitWindow.obj: InitWindow.cpp.obj
 
 .PHONY : InitWindow.obj
@@ -202,33 +175,6 @@ Prism.s: Prism.cpp.s
 Prism.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Prism.cpp.s
 .PHONY : Prism.cpp.s
-
-Shader.obj: Shader.cpp.obj
-
-.PHONY : Shader.obj
-
-# target to build an object file
-Shader.cpp.obj:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.obj
-.PHONY : Shader.cpp.obj
-
-Shader.i: Shader.cpp.i
-
-.PHONY : Shader.i
-
-# target to preprocess a source file
-Shader.cpp.i:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.i
-.PHONY : Shader.cpp.i
-
-Shader.s: Shader.cpp.s
-
-.PHONY : Shader.s
-
-# target to generate assembly for a file
-Shader.cpp.s:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.s
-.PHONY : Shader.cpp.s
 
 Triangle.obj: Triangle.cpp.obj
 
@@ -284,6 +230,33 @@ code/mesh/Model.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.s
 .PHONY : code/mesh/Model.cpp.s
 
+code/object/Camera.obj: code/object/Camera.cpp.obj
+
+.PHONY : code/object/Camera.obj
+
+# target to build an object file
+code/object/Camera.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj
+.PHONY : code/object/Camera.cpp.obj
+
+code/object/Camera.i: code/object/Camera.cpp.i
+
+.PHONY : code/object/Camera.i
+
+# target to preprocess a source file
+code/object/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Camera.cpp.i
+.PHONY : code/object/Camera.cpp.i
+
+code/object/Camera.s: code/object/Camera.cpp.s
+
+.PHONY : code/object/Camera.s
+
+# target to generate assembly for a file
+code/object/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Camera.cpp.s
+.PHONY : code/object/Camera.cpp.s
+
 code/object/Node.obj: code/object/Node.cpp.obj
 
 .PHONY : code/object/Node.obj
@@ -310,6 +283,60 @@ code/object/Node.s: code/object/Node.cpp.s
 code/object/Node.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Node.cpp.s
 .PHONY : code/object/Node.cpp.s
+
+code/object/Object.obj: code/object/Object.cpp.obj
+
+.PHONY : code/object/Object.obj
+
+# target to build an object file
+code/object/Object.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj
+.PHONY : code/object/Object.cpp.obj
+
+code/object/Object.i: code/object/Object.cpp.i
+
+.PHONY : code/object/Object.i
+
+# target to preprocess a source file
+code/object/Object.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Object.cpp.i
+.PHONY : code/object/Object.cpp.i
+
+code/object/Object.s: code/object/Object.cpp.s
+
+.PHONY : code/object/Object.s
+
+# target to generate assembly for a file
+code/object/Object.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Object.cpp.s
+.PHONY : code/object/Object.cpp.s
+
+code/shader/Shader.obj: code/shader/Shader.cpp.obj
+
+.PHONY : code/shader/Shader.obj
+
+# target to build an object file
+code/shader/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj
+.PHONY : code/shader/Shader.cpp.obj
+
+code/shader/Shader.i: code/shader/Shader.cpp.i
+
+.PHONY : code/shader/Shader.i
+
+# target to preprocess a source file
+code/shader/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.i
+.PHONY : code/shader/Shader.cpp.i
+
+code/shader/Shader.s: code/shader/Shader.cpp.s
+
+.PHONY : code/shader/Shader.s
+
+# target to generate assembly for a file
+code/shader/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.s
+.PHONY : code/shader/Shader.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -347,27 +374,30 @@ help:
 	@echo ... OpenGL
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... Camera.obj
-	@echo ... Camera.i
-	@echo ... Camera.s
 	@echo ... InitWindow.obj
 	@echo ... InitWindow.i
 	@echo ... InitWindow.s
 	@echo ... Prism.obj
 	@echo ... Prism.i
 	@echo ... Prism.s
-	@echo ... Shader.obj
-	@echo ... Shader.i
-	@echo ... Shader.s
 	@echo ... Triangle.obj
 	@echo ... Triangle.i
 	@echo ... Triangle.s
 	@echo ... code/mesh/Model.obj
 	@echo ... code/mesh/Model.i
 	@echo ... code/mesh/Model.s
+	@echo ... code/object/Camera.obj
+	@echo ... code/object/Camera.i
+	@echo ... code/object/Camera.s
 	@echo ... code/object/Node.obj
 	@echo ... code/object/Node.i
 	@echo ... code/object/Node.s
+	@echo ... code/object/Object.obj
+	@echo ... code/object/Object.i
+	@echo ... code/object/Object.s
+	@echo ... code/shader/Shader.obj
+	@echo ... code/shader/Shader.i
+	@echo ... code/shader/Shader.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

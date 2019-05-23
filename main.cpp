@@ -5,7 +5,7 @@
 #include <GLFW/glfw3.h>
 #include "glm/glm/glm.hpp"
 #include "InitWindow.h"
-#include "Shader.h"
+#include "code/shader/Shader.h"
 
 using namespace glm;
 

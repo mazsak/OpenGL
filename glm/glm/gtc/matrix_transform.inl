@@ -210,12 +210,12 @@ namespace glm
 
 	template <typename T>
 	GLM_FUNC_QUALIFIER tmat4x4<T, defaultp> perspective
-	(
-		T fovy,
-		T aspect,
-		T zNear,
-		T zFar
-	)
+            (
+                    T fovy,
+                    T aspect,
+                    T zNear,
+                    T zFar
+            )
 	{
 		assert(abs(aspect - std::numeric_limits<T>::epsilon()) > static_cast<T>(0));
 

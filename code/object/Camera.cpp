@@ -6,13 +6,11 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include "Camera.h"
-#include "glm/glm/gtx/transform.hpp"
-#include "glm/glm/gtc/matrix_transform.hpp"
+#include "../../glm/glm/gtx/transform.hpp"
+#include "../../glm/glm/gtc/matrix_transform.hpp"
 
 void Camera::setProjection(GLfloat angle, float width, float height, GLfloat min, GLfloat max) {
     Projection = glm::perspective(glm::radians(angle), width / height, min, max);
-    mvp = Projection * View * Model;
-
 }
 
 void Camera::setView(const glm::vec3 &vec0, const glm::vec3 &vec1, const glm::vec3 &vec2) {
@@ -21,15 +19,13 @@ void Camera::setView(const glm::vec3 &vec0, const glm::vec3 &vec1, const glm::ve
             vec1,
             vec2
     );
-    mvp = Projection * View * Model;
 }
 
 void Camera::setModel(glm::mat4 model) {
     Model = model;
-    mvp = Projection * View * Model;
 }
 
-Camera::Camera(float width, float height) {
+Camera::Camera(unsigned int id, Node *parent, float width, float height) : Node(id, parent) {
     Projection = glm::perspective(glm::radians(45.0f), width / height, 0.1f, 100.0f);
     View = glm::lookAt(
             glm::vec3(4, 3, 4),
@@ -37,12 +33,7 @@ Camera::Camera(float width, float height) {
             glm::vec3(0, 1, 0)
     );
     Model = glm::mat4(1.0f);
-    mvp = Projection * View * Model;
     position = glm::vec3(0, 0, 0);
-}
-
-const glm::mat4 &Camera::getMvp() const {
-    return mvp;
 }
 
 void Camera::move(GLFWwindow **window) {
@@ -160,4 +151,9 @@ const glm::mat4 &Camera::getView() const {
 
 const glm::mat4 &Camera::getModel() const {
     return Model;
+}
+
+void Camera::render(Shader *shader) {
+    glUniformMatrix4fv(shader->getProjectionMatrixId(), 1, GL_FALSE, &Camera::Projection[0][0]);
+    glUniformMatrix4fv(shader->getViewMatrixId(), 1, GL_FALSE, &Camera::View[0][0]);
 }

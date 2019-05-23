@@ -12,9 +12,9 @@ uniform sampler2D myTextureSampler;
 uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
 uniform vec3 Diffuse;
-uniform vec3 AmbientColor;
+
 uniform vec3 MaterialSpecularColor;
-uniform int choose;
+
 
 void main(){
 

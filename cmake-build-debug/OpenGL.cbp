@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Camera.cpp">
-			<Option target="OpenGL"/>
-		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Camera.h">
-			<Option target="OpenGL"/>
-		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/InitWindow.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
@@ -100,12 +94,6 @@
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Prism.h">
-			<Option target="OpenGL"/>
-		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Shader.cpp">
-			<Option target="OpenGL"/>
-		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Shader.h">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Triangle.cpp">
@@ -120,10 +108,28 @@
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h">
 			<Option target="OpenGL"/>
 		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Camera.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Camera.h">
+			<Option target="OpenGL"/>
+		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Node.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Object.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Object.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/shader/Shader.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/shader/Shader.h">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/main.cpp">

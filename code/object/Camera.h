@@ -1,10 +1,11 @@
 #ifndef OPENGL_CAMERA_H
 #define OPENGL_CAMERA_H
 
-#include "glm/glm/detail/type_mat4x4.hpp"
-#include "glm/glm/vec3.hpp"
+#include "../../glm/glm/detail/type_mat4x4.hpp"
+#include "../../glm/glm/vec3.hpp"
+#include "Node.h"
 
-class Camera {
+class Camera : Node{
 private:
 
     glm::mat4 Projection;
@@ -15,9 +16,12 @@ private:
     float xpos = 0.0f, ypos = 0.0f, zpos = 0.0f;
 
 public:
+
+    void render(Shader * shader);
+
     const glm::mat4 &getMvp() const;
 
-    Camera(float width, float height);
+    Camera(unsigned int id, Node *parent, float width, float height);
 
     void setProjection(GLfloat angle, float width, float height, GLfloat min, GLfloat max);
 

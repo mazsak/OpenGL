@@ -3,6 +3,7 @@
 
 #include <GL/gl.h>
 #include "../../glm/glm/glm.hpp"
+#include "../shader/Shader.h"
 #include <iostream>
 #include <vector>
 
@@ -19,7 +20,7 @@ private:
     glm::vec3 ambient;
     glm::vec3 diffuse;
     glm::vec3 specular;
-    GLuint Texture;
+    GLuint texture;
 
     bool loadModel(char *nameFileModel);
 
@@ -28,9 +29,9 @@ private:
     void loadMaterials(char *pathMtl);
 
 public:
-    Model(char *nameFileModel, char *nameFileTexture,char *nameFileMtl);
+    Model(char *nameFileModel, char *nameFileTexture, char* nameFileMtl);
 
-    void drawModel();
+    void drawModel(Shader * shader);
 
     void clear();
 

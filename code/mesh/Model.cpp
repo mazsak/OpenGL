@@ -3,8 +3,11 @@
 
 #include <GL/glew.h>
 #include <cstring>
+#include <fstream>
+#include <sstream>
 #include "Model.h"
-#include "../../Shader.h"
+#include "../../glm/glm/gtx/transform.hpp"
+#include "../../glm/glm/gtc/matrix_transform.hpp"
 
 #define SIZE 128
 
@@ -167,7 +170,12 @@ const glm::vec3 &Model::getSpecular() const {
     return specular;
 }
 
-void Model::drawModel() {
+void Model::drawModel(Shader* shader) {
+    glUniform3f(shader->getDiffuseId(), diffuse.x, diffuse.y, diffuse.z);
+
+    glUniform1i(shader->getTextureId(), 0);
+    glBindTexture(GL_TEXTURE_2D, texture);
+
     glEnableVertexAttribArray(0);
     glBindBuffer(GL_ARRAY_BUFFER, vertexbuffer);
     glVertexAttribPointer(
@@ -277,9 +285,9 @@ void Model::loadTexture(char *nameFileTexture) {
 
     fclose(file);
 
-    glGenTextures(1, &Texture);
+    glGenTextures(1, &texture);
 
-    glBindTexture(GL_TEXTURE_2D, Texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
 
     glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
 
@@ -294,13 +302,13 @@ void Model::loadTexture(char *nameFileTexture) {
 }
 
 GLuint Model::getTexture() const {
-    return Texture;
+    return texture;
 }
 
 void Model::clear() {
     glDeleteBuffers(1, &vertexbuffer);
     glDeleteBuffers(1, &uvbuffer);
-    glDeleteTextures(1, &Texture);
+    glDeleteTextures(1, &texture);
 
 }
 

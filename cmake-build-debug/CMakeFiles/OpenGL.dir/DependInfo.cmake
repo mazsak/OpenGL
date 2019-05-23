@@ -4,13 +4,14 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Projects/C++/CLion/OpenGL/Camera.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Camera.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/InitWindow.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/InitWindow.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/Prism.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Prism.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/Shader.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Shader.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/Triangle.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/code/object/Camera.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/code/object/Object.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/code/shader/Shader.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/main.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

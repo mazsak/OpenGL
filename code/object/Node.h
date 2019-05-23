@@ -9,6 +9,7 @@
 #include "../../glm/glm/glm.hpp"
 #include "../../glm/glm/gtx/transform.hpp"
 #include "../../glm/glm/gtc/matrix_transform.hpp"
+#include "../shader/Shader.h"
 
 class Node {
 private:
@@ -57,7 +58,7 @@ public:
 
     void update();
 
-    void render();
+    virtual void render(Shader * shader);
 
     void addChildren(Node * children);
 

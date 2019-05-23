@@ -181,10 +181,10 @@ namespace glm
 	/// @see gtc_matrix_transform
 	template <typename T>
 	GLM_FUNC_DECL tmat4x4<T, defaultp> perspective(
-		T fovy,
-		T aspect,
-		T near,
-		T far);
+            T fovy,
+            T aspect,
+            T near,
+            T far);
 
 	/// Builds a perspective projection matrix based on a field of view.
 	/// 

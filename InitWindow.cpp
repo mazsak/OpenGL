@@ -3,7 +3,8 @@
 #include <stdlib.h>
 #include "code/mesh/Model.h"
 #include "InitWindow.h"
-#include "Shader.h"
+#include "code/shader/Shader.h"
+#include "code/object/Object.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -30,39 +31,28 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    int choose = 0;
     glm::vec3 lightPos = glm::vec3(4, 4, 4);
     Model *stump = new Model((char *) "models_blender/stump/stump.obj",
                              (char *) "models_blender/stump/stump.bmp",
                              (char *) "models_blender/stump/stump.mtl");
-//    Model *model = new Model((char *) "eye.obj",
-//                             (char *) "textur_eye.bmp");
+    Model *cus = new Model((char *) "models_blender/cos.obj",
+                           (char *) "models_blender/cos.bmp",
+                           (char *) "models_blender/cos.mtl");
+    Object *object = new Object(1, nullptr, stump);
+    Object *object1 = new Object(2, object, cus);
+    Camera *camera = new Camera(3, object, width, height);
+
+    object1->setTranslation(glm::vec3(2.0, 1.0, 1.0));
+    object1->updateAbsolutePosition();
+
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-        glUseProgram(programID);
+        glUseProgram(shader->getProgramId());
+        glUniform3f(shader->getLightId(), lightPos.x, lightPos.y, lightPos.z);
         camera->move(&window);
-        glUniformMatrix4fv(MatrixID, 1, GL_FALSE, &camera->getMvp()[0][0]);
-        glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &camera->getModel()[0][0]);
-        glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &camera->getView()[0][0]);
-        glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
-        glUniform3f(DiffuseID, stump->getDiffuse().x, stump->getDiffuse().y, stump->getDiffuse().z);
-        glUniform3f(AmbientID, stump->getAmbient().x, stump->getAmbient().y, stump->getAmbient().z);
-        glUniform3f(SpecularID, stump->getSpecular().x, stump->getSpecular().y, stump->getSpecular().z);
-        glUniform1i(chooseID, choose);
 
-        if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
-            choose = 1;
-        }
-        if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS) {
-            choose = 2;
-        }
-        if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS) {
-            choose = 3;
-        }
-        if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS) {
-            choose = 4;
-        }
+
         if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS) {
             lightPos.z += 1;
         }
@@ -81,12 +71,8 @@ void InitWindow::mainLoop() {
 
 
         glActiveTexture(GL_TEXTURE0);
-//        glBindTexture(GL_TEXTURE_2D, model->getTexture());
-        glUniform1i(TextureID, 0);
-//        model->drawModel();
 
-        glBindTexture(GL_TEXTURE_2D, stump->getTexture());
-        stump->drawModel();
+        object->render(shader);
 
 
         glfwSwapBuffers(InitWindow::window);
@@ -97,13 +83,15 @@ void InitWindow::mainLoop() {
 
 //    model->clear();
     stump->clear();
-    glDeleteProgram(programID);
+    glDeleteProgram(shader->getProgramId());
     glDeleteVertexArrays(1, &VertexArrayID);
 
     glfwTerminate();
 }
 
 InitWindow::InitWindow(int width, int height, const char *nameWindow) {
+    InitWindow::width = width;
+    InitWindow::height = height;
     glewExperimental = true;
     if (!glfwInit()) {
         fprintf(stderr, "Failed to initialize GLFW\n");
@@ -144,18 +132,8 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
 
-    programID = LoadShaders("code/shader/VertexShader.cpp",
-                            "code/shader/FragmentShader.cpp");
-    MatrixID = glGetUniformLocation(programID, "MVP");
-    ViewMatrixID = glGetUniformLocation(programID, "V");
-    ModelMatrixID = glGetUniformLocation(programID, "M");
-    TextureID = glGetUniformLocation(programID, "myTextureSampler");
-    LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
-    DiffuseID = glGetUniformLocation(programID, "Diffuse");
-    AmbientID = glGetUniformLocation(programID, "AmbientColor");
-    SpecularID = glGetUniformLocation(programID, "MaterialSpecularColor");
-    chooseID = glGetUniformLocation(programID, "choose");
-    camera = new Camera(width, height);
+    shader = new Shader((char *) "code/shader/VertexShaderObject.cpp",
+                        (char *) "code/shader/FragmentShaderObject.cpp");
 
 }
 
