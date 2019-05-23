@@ -1,7 +1,7 @@
 #include <GL/glew.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "Solid.h"
+#include "code/mesh/Model.h"
 #include "InitWindow.h"
 #include "Shader.h"
 
@@ -32,10 +32,11 @@ void InitWindow::setAlpha(GLclampf alpha) {
 void InitWindow::mainLoop() {
     int choose = 0;
     glm::vec3 lightPos = glm::vec3(4, 4, 4);
-    Model *stump = new Model((char *) "stump.obj",
-                             (char *) "stump.bmp");
-    Model *model = new Model((char *) "eye.obj",
-                             (char *) "textur_eye.bmp");
+    Model *stump = new Model((char *) "models_blender/stump/stump.obj",
+                             (char *) "models_blender/stump/stump.bmp",
+                             (char *) "models_blender/stump/stump.mtl");
+//    Model *model = new Model((char *) "eye.obj",
+//                             (char *) "textur_eye.bmp");
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
@@ -45,9 +46,9 @@ void InitWindow::mainLoop() {
         glUniformMatrix4fv(ModelMatrixID, 1, GL_FALSE, &camera->getModel()[0][0]);
         glUniformMatrix4fv(ViewMatrixID, 1, GL_FALSE, &camera->getView()[0][0]);
         glUniform3f(LightID, lightPos.x, lightPos.y, lightPos.z);
-        glUniform3f(DiffuseID, model->getDiffuse().x, model->getDiffuse().y, model->getDiffuse().z);
-        glUniform3f(AmbientID, model->getAmbient().x, model->getAmbient().y, model->getAmbient().z);
-        glUniform3f(SpectacularID, model->getSpectacular().x, model->getSpectacular().y, model->getSpectacular().z);
+        glUniform3f(DiffuseID, stump->getDiffuse().x, stump->getDiffuse().y, stump->getDiffuse().z);
+        glUniform3f(AmbientID, stump->getAmbient().x, stump->getAmbient().y, stump->getAmbient().z);
+        glUniform3f(SpecularID, stump->getSpecular().x, stump->getSpecular().y, stump->getSpecular().z);
         glUniform1i(chooseID, choose);
 
         if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS) {
@@ -80,9 +81,9 @@ void InitWindow::mainLoop() {
 
 
         glActiveTexture(GL_TEXTURE0);
-        glBindTexture(GL_TEXTURE_2D, model->getTexture());
+//        glBindTexture(GL_TEXTURE_2D, model->getTexture());
         glUniform1i(TextureID, 0);
-        model->drawModel();
+//        model->drawModel();
 
         glBindTexture(GL_TEXTURE_2D, stump->getTexture());
         stump->drawModel();
@@ -94,7 +95,7 @@ void InitWindow::mainLoop() {
     } while (glfwGetKey(InitWindow::window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
              glfwWindowShouldClose(InitWindow::window) == 0);
 
-    model->clear();
+//    model->clear();
     stump->clear();
     glDeleteProgram(programID);
     glDeleteVertexArrays(1, &VertexArrayID);
@@ -143,16 +144,16 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     glGenVertexArrays(1, &VertexArrayID);
     glBindVertexArray(VertexArrayID);
 
-    programID = LoadShaders("VertexShader.cpp",
-                            "FragmentShader.cpp");
+    programID = LoadShaders("code/shader/VertexShader.cpp",
+                            "code/shader/FragmentShader.cpp");
     MatrixID = glGetUniformLocation(programID, "MVP");
     ViewMatrixID = glGetUniformLocation(programID, "V");
     ModelMatrixID = glGetUniformLocation(programID, "M");
     TextureID = glGetUniformLocation(programID, "myTextureSampler");
     LightID = glGetUniformLocation(programID, "LightPosition_worldspace");
-    DiffuseID = glGetUniformLocation(programID, "LightColor");
+    DiffuseID = glGetUniformLocation(programID, "Diffuse");
     AmbientID = glGetUniformLocation(programID, "AmbientColor");
-    SpectacularID = glGetUniformLocation(programID, "MaterialSpecularColor");
+    SpecularID = glGetUniformLocation(programID, "MaterialSpecularColor");
     chooseID = glGetUniformLocation(programID, "choose");
     camera = new Camera(width, height);
 

@@ -96,16 +96,34 @@
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/InitWindow.h">
 			<Option target="OpenGL"/>
 		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/Prism.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/Prism.h">
+			<Option target="OpenGL"/>
+		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Shader.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Shader.h">
 			<Option target="OpenGL"/>
 		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Solid.cpp">
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/Triangle.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/Solid.h">
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/Triangle.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Node.h">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/main.cpp">

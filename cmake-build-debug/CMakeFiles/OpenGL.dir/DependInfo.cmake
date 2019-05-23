@@ -6,8 +6,11 @@ set(CMAKE_DEPENDS_LANGUAGES
 set(CMAKE_DEPENDS_CHECK_CXX
   "D:/Projects/C++/CLion/OpenGL/Camera.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Camera.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/InitWindow.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/InitWindow.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/Prism.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Prism.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/Shader.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Shader.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/Solid.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Solid.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/Triangle.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
+  "D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
   "D:/Projects/C++/CLion/OpenGL/main.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/main.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

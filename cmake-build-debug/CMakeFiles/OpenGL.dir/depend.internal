@@ -98,7 +98,90 @@ CMakeFiles/OpenGL.dir/InitWindow.cpp.obj
  D:/Projects/C++/CLion/OpenGL/InitWindow.cpp
  D:/Projects/C++/CLion/OpenGL/InitWindow.h
  D:/Projects/C++/CLion/OpenGL/Shader.h
- D:/Projects/C++/CLion/OpenGL/Solid.h
+ D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h
+ D:/Projects/C++/CLion/OpenGL/glm/glm/common.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_fixes.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle_func.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_vectorize.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_common.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_common.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_exponential.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_exponential.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_geometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_geometric.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_integer.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_integer.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_matrix.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_matrix.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_packing.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_packing.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_trigonometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_trigonometric.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_vector_relational.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_vector_relational.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/precision.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/setup.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_float.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_half.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_half.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_int.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec1.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec1.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_avx.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_avx2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_sse2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/exponential.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/fwd.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/geometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/glm.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/integer.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/matrix.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/packing.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/trigonometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vector_relational.hpp
+CMakeFiles/OpenGL.dir/Prism.cpp.obj
+ ../glew-2.1.0/include/GL/glew.h
+ D:/Projects/C++/CLion/OpenGL/Prism.cpp
+ D:/Projects/C++/CLion/OpenGL/Prism.h
  D:/Projects/C++/CLion/OpenGL/glm/glm/common.hpp
  D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_fixes.hpp
  D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle.hpp
@@ -182,11 +265,97 @@ CMakeFiles/OpenGL.dir/Shader.cpp.obj
  ../glew-2.1.0/include/GL/glew.h
  D:/Projects/C++/CLion/OpenGL/Shader.cpp
  D:/Projects/C++/CLion/OpenGL/Shader.h
-CMakeFiles/OpenGL.dir/Solid.cpp.obj
+CMakeFiles/OpenGL.dir/Triangle.cpp.obj
+ ../glew-2.1.0/include/GL/glew.h
+ D:/Projects/C++/CLion/OpenGL/Triangle.cpp
+ D:/Projects/C++/CLion/OpenGL/Triangle.h
+CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj
  ../glew-2.1.0/include/GL/glew.h
  D:/Projects/C++/CLion/OpenGL/Shader.h
- D:/Projects/C++/CLion/OpenGL/Solid.cpp
- D:/Projects/C++/CLion/OpenGL/Solid.h
+ D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp
+ D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h
+ D:/Projects/C++/CLion/OpenGL/glm/glm/common.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_fixes.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle_func.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_vectorize.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_common.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_common.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_exponential.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_exponential.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_geometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_geometric.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_integer.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_integer.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_matrix.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_matrix.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_packing.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_packing.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_trigonometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_trigonometric.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_vector_relational.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/func_vector_relational.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/precision.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/setup.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_float.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_half.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_half.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_int.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat2x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat3x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_mat4x4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec1.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec1.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec3.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_avx.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_avx2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/detail/type_vec4_sse2.inl
+ D:/Projects/C++/CLion/OpenGL/glm/glm/exponential.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/fwd.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/geometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/glm.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/integer.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat2x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat3x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/mat4x4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/matrix.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/packing.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/trigonometric.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec2.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec3.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vec4.hpp
+ D:/Projects/C++/CLion/OpenGL/glm/glm/vector_relational.hpp
+CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj
+ D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp
+ D:/Projects/C++/CLion/OpenGL/code/object/Node.h
  D:/Projects/C++/CLion/OpenGL/glm/glm/common.hpp
  D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_fixes.hpp
  D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_swizzle.hpp

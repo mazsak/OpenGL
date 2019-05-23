@@ -22,7 +22,7 @@ private:
     GLuint chooseID;
     GLuint DiffuseID;
     GLuint AmbientID;
-    GLuint SpectacularID;
+    GLuint SpecularID;
 
 public:
     InitWindow(int width, int height, const char *nameWindow);

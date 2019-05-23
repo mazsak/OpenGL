@@ -176,6 +176,33 @@ InitWindow.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.s
 .PHONY : InitWindow.cpp.s
 
+Prism.obj: Prism.cpp.obj
+
+.PHONY : Prism.obj
+
+# target to build an object file
+Prism.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Prism.cpp.obj
+.PHONY : Prism.cpp.obj
+
+Prism.i: Prism.cpp.i
+
+.PHONY : Prism.i
+
+# target to preprocess a source file
+Prism.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Prism.cpp.i
+.PHONY : Prism.cpp.i
+
+Prism.s: Prism.cpp.s
+
+.PHONY : Prism.s
+
+# target to generate assembly for a file
+Prism.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Prism.cpp.s
+.PHONY : Prism.cpp.s
+
 Shader.obj: Shader.cpp.obj
 
 .PHONY : Shader.obj
@@ -203,32 +230,86 @@ Shader.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Shader.cpp.s
 .PHONY : Shader.cpp.s
 
-Solid.obj: Solid.cpp.obj
+Triangle.obj: Triangle.cpp.obj
 
-.PHONY : Solid.obj
+.PHONY : Triangle.obj
 
 # target to build an object file
-Solid.cpp.obj:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.obj
-.PHONY : Solid.cpp.obj
+Triangle.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Triangle.cpp.obj
+.PHONY : Triangle.cpp.obj
 
-Solid.i: Solid.cpp.i
+Triangle.i: Triangle.cpp.i
 
-.PHONY : Solid.i
+.PHONY : Triangle.i
 
 # target to preprocess a source file
-Solid.cpp.i:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.i
-.PHONY : Solid.cpp.i
+Triangle.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Triangle.cpp.i
+.PHONY : Triangle.cpp.i
 
-Solid.s: Solid.cpp.s
+Triangle.s: Triangle.cpp.s
 
-.PHONY : Solid.s
+.PHONY : Triangle.s
 
 # target to generate assembly for a file
-Solid.cpp.s:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Solid.cpp.s
-.PHONY : Solid.cpp.s
+Triangle.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Triangle.cpp.s
+.PHONY : Triangle.cpp.s
+
+code/mesh/Model.obj: code/mesh/Model.cpp.obj
+
+.PHONY : code/mesh/Model.obj
+
+# target to build an object file
+code/mesh/Model.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj
+.PHONY : code/mesh/Model.cpp.obj
+
+code/mesh/Model.i: code/mesh/Model.cpp.i
+
+.PHONY : code/mesh/Model.i
+
+# target to preprocess a source file
+code/mesh/Model.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.i
+.PHONY : code/mesh/Model.cpp.i
+
+code/mesh/Model.s: code/mesh/Model.cpp.s
+
+.PHONY : code/mesh/Model.s
+
+# target to generate assembly for a file
+code/mesh/Model.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.s
+.PHONY : code/mesh/Model.cpp.s
+
+code/object/Node.obj: code/object/Node.cpp.obj
+
+.PHONY : code/object/Node.obj
+
+# target to build an object file
+code/object/Node.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj
+.PHONY : code/object/Node.cpp.obj
+
+code/object/Node.i: code/object/Node.cpp.i
+
+.PHONY : code/object/Node.i
+
+# target to preprocess a source file
+code/object/Node.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Node.cpp.i
+.PHONY : code/object/Node.cpp.i
+
+code/object/Node.s: code/object/Node.cpp.s
+
+.PHONY : code/object/Node.s
+
+# target to generate assembly for a file
+code/object/Node.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Node.cpp.s
+.PHONY : code/object/Node.cpp.s
 
 main.obj: main.cpp.obj
 
@@ -272,12 +353,21 @@ help:
 	@echo ... InitWindow.obj
 	@echo ... InitWindow.i
 	@echo ... InitWindow.s
+	@echo ... Prism.obj
+	@echo ... Prism.i
+	@echo ... Prism.s
 	@echo ... Shader.obj
 	@echo ... Shader.i
 	@echo ... Shader.s
-	@echo ... Solid.obj
-	@echo ... Solid.i
-	@echo ... Solid.s
+	@echo ... Triangle.obj
+	@echo ... Triangle.i
+	@echo ... Triangle.s
+	@echo ... code/mesh/Model.obj
+	@echo ... code/mesh/Model.i
+	@echo ... code/mesh/Model.s
+	@echo ... code/object/Node.obj
+	@echo ... code/object/Node.i
+	@echo ... code/object/Node.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s
