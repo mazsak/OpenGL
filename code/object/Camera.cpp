@@ -21,18 +21,13 @@ void Camera::setView(const glm::vec3 &vec0, const glm::vec3 &vec1, const glm::ve
     );
 }
 
-void Camera::setModel(glm::mat4 model) {
-    Model = model;
-}
-
 Camera::Camera(unsigned int id, Node *parent, float width, float height) : Node(id, parent) {
     Projection = glm::perspective(glm::radians(45.0f), width / height, 0.1f, 100.0f);
     View = glm::lookAt(
-            glm::vec3(4, 3, 4),
+            glm::vec3(0, 0, 0),
             glm::vec3(0, 0, 0),
             glm::vec3(0, 1, 0)
     );
-    Model = glm::mat4(1.0f);
     position = glm::vec3(0, 0, 0);
 }
 
@@ -127,30 +122,13 @@ void Camera::move(GLFWwindow **window) {
         position = glm::vec3(0, 0, 0);
     }
 
-    glm::mat4 translationModel = glm::translate(glm::mat4(1.0f), position);
-    glm::mat4 rotationModelX = glm::mat4(1, 0, 0, 0, 0, glm::cos(anglexR), -glm::sin(anglexR), 0, 0, glm::sin(anglexR),
-                                         glm::cos(anglexR), 0, 0,
-                                         0, 0, 1);
-    glm::mat4 rotationModelY = glm::mat4(glm::cos(angleyR), 0, glm::sin(angleyR), 0, 0, 1, 0, 0, -glm::sin(angleyR), 0,
-                                         glm::cos(angleyR), 0, 0,
-                                         0, 0, 1);
-    glm::mat4 rotationModelZ = glm::mat4(glm::cos(anglezR), -glm::sin(anglezR), 0, 0, glm::sin(anglezR),
-                                         glm::cos(anglezR),
-                                         0, 0, 0, 0, 1, 0, 0,
-                                         0, 0, 1);
-    glm::mat4 rotationModel = rotationModelX * rotationModelY * rotationModelZ;
-    glm::mat4 model = translationModel * rotationModel;
-    Camera::setModel(model);
+    Camera::setView(position, position + glm::vec3(anglexR, angleyR, anglezR), glm::vec3(0, 1, 0));
 
     lastTime = currentTime;
 }
 
 const glm::mat4 &Camera::getView() const {
     return View;
-}
-
-const glm::mat4 &Camera::getModel() const {
-    return Model;
 }
 
 void Camera::render(Shader *shader) {

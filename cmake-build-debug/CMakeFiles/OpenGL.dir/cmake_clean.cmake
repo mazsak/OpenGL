@@ -8,6 +8,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
   "CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
   "CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
+  "CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
   "OpenGL.pdb"
   "OpenGL.exe"
   "OpenGL.exe.manifest"

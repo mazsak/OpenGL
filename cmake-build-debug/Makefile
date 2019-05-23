@@ -257,6 +257,33 @@ code/object/Camera.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Camera.cpp.s
 .PHONY : code/object/Camera.cpp.s
 
+code/object/Light.obj: code/object/Light.cpp.obj
+
+.PHONY : code/object/Light.obj
+
+# target to build an object file
+code/object/Light.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj
+.PHONY : code/object/Light.cpp.obj
+
+code/object/Light.i: code/object/Light.cpp.i
+
+.PHONY : code/object/Light.i
+
+# target to preprocess a source file
+code/object/Light.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Light.cpp.i
+.PHONY : code/object/Light.cpp.i
+
+code/object/Light.s: code/object/Light.cpp.s
+
+.PHONY : code/object/Light.s
+
+# target to generate assembly for a file
+code/object/Light.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Light.cpp.s
+.PHONY : code/object/Light.cpp.s
+
 code/object/Node.obj: code/object/Node.cpp.obj
 
 .PHONY : code/object/Node.obj
@@ -389,6 +416,9 @@ help:
 	@echo ... code/object/Camera.obj
 	@echo ... code/object/Camera.i
 	@echo ... code/object/Camera.s
+	@echo ... code/object/Light.obj
+	@echo ... code/object/Light.i
+	@echo ... code/object/Light.s
 	@echo ... code/object/Node.obj
 	@echo ... code/object/Node.i
 	@echo ... code/object/Node.s

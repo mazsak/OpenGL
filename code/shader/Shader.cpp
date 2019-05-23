@@ -97,8 +97,10 @@ void Shader::load(char *nameFileVertex, char *nameFileFragment) {
     Shader::ViewMatrixID = glGetUniformLocation(Shader::programID, "V");
     Shader::ModelMatrixID = glGetUniformLocation(Shader::programID, "M");
     Shader::TextureID = glGetUniformLocation(Shader::programID, "myTextureSampler");
-    Shader::LightID = glGetUniformLocation(Shader::programID, "LightPosition_worldspace");
+    Shader::LightPositionID = glGetUniformLocation(Shader::programID, "LightPosition_worldspace");
     Shader::DiffuseID = glGetUniformLocation(Shader::programID, "Diffuse");
+    Shader::LightColorID = glGetUniformLocation(Shader::programID, "LightColor");
+    Shader::LightPowerID = glGetUniformLocation(Shader::programID, "LightPower");
 }
 
 Shader::Shader(char *nameFileVertex, char *nameFileFragment) {
@@ -117,8 +119,8 @@ GLuint Shader::getModelMatrixId() const {
     return ModelMatrixID;
 }
 
-GLuint Shader::getLightId() const {
-    return LightID;
+GLuint Shader::getLightPositionId() const {
+    return LightPositionID;
 }
 
 GLuint Shader::getTextureId() const {
@@ -131,5 +133,13 @@ GLuint Shader::getDiffuseId() const {
 
 GLuint Shader::getProgramId() const {
     return programID;
+}
+
+GLuint Shader::getLightColorId() const {
+    return LightColorID;
+}
+
+GLuint Shader::getLightPowerId() const {
+    return LightPowerID;
 }
 

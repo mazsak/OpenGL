@@ -114,6 +114,12 @@
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Camera.h">
 			<Option target="OpenGL"/>
 		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Light.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Light.h">
+			<Option target="OpenGL"/>
+		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp">
 			<Option target="OpenGL"/>
 		</Unit>

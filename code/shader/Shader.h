@@ -14,9 +14,11 @@ private:
     GLuint ProjectionMatrixID;
     GLuint ViewMatrixID;
     GLuint ModelMatrixID;
-    GLuint LightID;
+    GLuint LightPositionID;
     GLuint TextureID;
     GLuint DiffuseID;
+    GLuint LightColorID;
+    GLuint LightPowerID;
 
     void load(char *nameFileVertex, char *nameFileFragment);
 
@@ -32,11 +34,15 @@ public:
 
     GLuint getModelMatrixId() const;
 
-    GLuint getLightId() const;
+    GLuint getLightPositionId() const;
 
     GLuint getTextureId() const;
 
     GLuint getDiffuseId() const;
+
+    GLuint getLightColorId() const;
+
+    GLuint getLightPowerId() const;
 
 };
 

@@ -76,7 +76,9 @@ void Node::update() {
 }
 
 void Node::render(Shader * shader) {
-
+    for (int i = 0; i < getChildren().size(); i ++){
+        getChildren()[i]->render(shader);
+    }
 }
 
 void Node::addChildren(Node *children) {

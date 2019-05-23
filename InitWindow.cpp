@@ -5,6 +5,7 @@
 #include "InitWindow.h"
 #include "code/shader/Shader.h"
 #include "code/object/Object.h"
+#include "code/object/Light.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -38,19 +39,37 @@ void InitWindow::mainLoop() {
     Model *cus = new Model((char *) "models_blender/cos.obj",
                            (char *) "models_blender/cos.bmp",
                            (char *) "models_blender/cos.mtl");
-    Object *object = new Object(1, nullptr, stump);
-    Object *object1 = new Object(2, object, cus);
-    Camera *camera = new Camera(3, object, width, height);
 
+    Node *root = new Node(0, nullptr);
+    Light *sun = new Light(1, root, 50.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    Camera *camera = new Camera(3, root, width, height);
+    Object *object = new Object(1, root, stump);
+    Object *object1 = new Object(2, object, cus);
+    Object *object2 = new Object(2, object1, stump);
+    Object *object3 = new Object(2, object2, stump);
+
+    sun->setTranslation(glm::vec3(4.0, 4.0, 4.0));
+    sun->updateAbsolutePosition();
+
+    object->setTranslation(glm::vec3(-1.0, -1.0, -1.0));
+    object->updateAbsolutePosition();
     object1->setTranslation(glm::vec3(2.0, 1.0, 1.0));
     object1->updateAbsolutePosition();
+    object2->setTranslation(glm::vec3(-1.0, 1.0, 1.0));
+    object2->setRotation(glm::vec3(2.0, 1.0, 1.0));
+    object2->setScale(glm::vec3(0.5, 3.0, 0.5));
+    object2->updateAbsolutePosition();
+    object3->setTranslation(glm::vec3(0.25, 0.5, 0.0));
+    object3->setScale(glm::vec3(2.0, 0.33, 2.0));
+    object3->updateAbsolutePosition();
+
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(shader->getProgramId());
-        glUniform3f(shader->getLightId(), lightPos.x, lightPos.y, lightPos.z);
         camera->move(&window);
+        glUniform3f(shader->getLightPositionId(), lightPos.x, lightPos.y, lightPos.z);
 
 
         if (glfwGetKey(window, GLFW_KEY_O) == GLFW_PRESS) {
@@ -72,7 +91,7 @@ void InitWindow::mainLoop() {
 
         glActiveTexture(GL_TEXTURE0);
 
-        object->render(shader);
+        root->render(shader);
 
 
         glfwSwapBuffers(InitWindow::window);
