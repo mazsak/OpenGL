@@ -72,7 +72,6 @@ void Node::setVisible(bool visible) {
 }
 
 void Node::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
-
     if(isVisible()){
         for (int i = 0; i < getChildren().size(); i++){
             getChildren()[i]->update(positionCamera, directionCamera);

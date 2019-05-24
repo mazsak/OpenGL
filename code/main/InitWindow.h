@@ -39,7 +39,7 @@ public:
 
     void generateForest(int number, Model *model);
 
-    void addNode(int number, Model *model, Node *parent);
+    void addNode(int *number, Model *model, Node *parent, int level, int size);
 };
 
 #endif

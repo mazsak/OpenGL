@@ -33,7 +33,7 @@ void InitWindow::mainLoop() {
                              (char *) "models_blender/stump/stump.bmp",
                              (char *) "models_blender/stump/stump.mtl");
 
-    generateForest(16, stump);
+    generateForest(1000, stump);
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -117,22 +117,45 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
 }
 
 void InitWindow::generateForest(int number, Model *model) {
-    float check = glm::pow((double)number, 0.25);
+    float check = glm::pow((double) number, 0.25);
     int level = check;
 
-    if(level != check){
+    if (level != check) {
         level++;
     }
 
-    int size = glm::pow(2,level - 1)*4;
-    for (int i = 1; i < level; ++i) {
-        if()
-    }
+    int size = glm::pow(2, level - 1) * 4;
+
+    InitWindow::addNode(&number, model, root, level, size);
 
 }
 
-void InitWindow::addNode(int number, Model *model, Node *parent) {
+void InitWindow::addNode(int *number, Model *model, Node *parent, int level, int size) {
+    std::vector<glm::vec3> place;
+    place.emplace_back(size, 0, size);
+    place.emplace_back(-size, 0, size);
+    place.emplace_back(-size, 0, -size);
+    place.emplace_back(size, 0, -size);
 
+    if (level != 0) {
+        for (int i = 0; i < 4; i++) {
+            Node *node = new Node(parent->getId() * i, parent);
+            node->setTranslation(place[i]);
+            node->updateAbsolutePosition();
+            InitWindow::addNode(&*number, model, node, level - 1, size / 2);
+        }
+    } else {
+        for (int i = 0; i < 4; i++) {
+            if (number != 0) {
+                Object *object = new Object(parent->getId() * i, parent, model);
+                object->setTranslation(place[i]);
+                object->updateAbsolutePosition();
+                number--;
+            } else {
+                break;
+            }
+        }
+    }
 }
 
 
