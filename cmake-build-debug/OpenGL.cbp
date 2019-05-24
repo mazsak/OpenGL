@@ -84,12 +84,6 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/InitWindow.cpp">
-			<Option target="OpenGL"/>
-		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/InitWindow.h">
-			<Option target="OpenGL"/>
-		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Prism.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
@@ -100,6 +94,15 @@
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/Triangle.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.cpp">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.h">
+			<Option target="OpenGL"/>
+		</Unit>
+		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/main/main.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp">
@@ -136,9 +139,6 @@
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/code/shader/Shader.h">
-			<Option target="OpenGL"/>
-		</Unit>
-		<Unit filename="D:/Projects/C++/CLion/OpenGL/main.cpp">
 			<Option target="OpenGL"/>
 		</Unit>
 		<Unit filename="D:/Projects/C++/CLion/OpenGL/CMakeLists.txt">

@@ -5,7 +5,7 @@
 #include "Node.h"
 
 Node::Node(unsigned int id, Node *parent) : ID(id), parent(parent) {
-    if(parent) {
+    if (parent) {
         parent->addChildren(this);
     }
     translation = glm::vec3(0.0, 0.0, 0.0);
@@ -71,13 +71,20 @@ void Node::setVisible(bool visible) {
     Node::visible = visible;
 }
 
-void Node::update() {
+void Node::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
 
+    if(isVisible()){
+        for (int i = 0; i < getChildren().size(); i++){
+            getChildren()[i]->update(positionCamera, directionCamera);
+        }
+    }
 }
 
-void Node::render(Shader * shader) {
-    for (int i = 0; i < getChildren().size(); i ++){
-        getChildren()[i]->render(shader);
+void Node::render(Shader *shader) {
+    if (isVisible()) {
+        for (int i = 0; i < getChildren().size(); i++) {
+            getChildren()[i]->render(shader);
+        }
     }
 }
 
@@ -98,9 +105,9 @@ void Node::setAbsolutePosition(const glm::mat4 &absolutePosition) {
 }
 
 void Node::updateAbsolutePosition() {
-    if(Node::parent){
-        Node::absolutePosition = Node::parent->getAbsolutePosition()*Node::getRelativePosition();
-    }else{
+    if (Node::parent) {
+        Node::absolutePosition = Node::parent->getAbsolutePosition() * Node::getRelativePosition();
+    } else {
         Node::absolutePosition = Node::getRelativePosition();
     }
 }

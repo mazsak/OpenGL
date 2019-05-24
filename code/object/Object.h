@@ -17,7 +17,7 @@ private:
 public:
     Object(unsigned int id, Node *parent, Model *model);
 
-    void update();
+    void update(glm::vec3 positionCamera, glm::vec3 directionCamera);
 
     void render(Shader* shader);
 };

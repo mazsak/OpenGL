@@ -122,33 +122,6 @@ OpenGL/fast:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/build
 .PHONY : OpenGL/fast
 
-InitWindow.obj: InitWindow.cpp.obj
-
-.PHONY : InitWindow.obj
-
-# target to build an object file
-InitWindow.cpp.obj:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.obj
-.PHONY : InitWindow.cpp.obj
-
-InitWindow.i: InitWindow.cpp.i
-
-.PHONY : InitWindow.i
-
-# target to preprocess a source file
-InitWindow.cpp.i:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.i
-.PHONY : InitWindow.cpp.i
-
-InitWindow.s: InitWindow.cpp.s
-
-.PHONY : InitWindow.s
-
-# target to generate assembly for a file
-InitWindow.cpp.s:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/InitWindow.cpp.s
-.PHONY : InitWindow.cpp.s
-
 Prism.obj: Prism.cpp.obj
 
 .PHONY : Prism.obj
@@ -202,6 +175,60 @@ Triangle.s: Triangle.cpp.s
 Triangle.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Triangle.cpp.s
 .PHONY : Triangle.cpp.s
+
+code/main/InitWindow.obj: code/main/InitWindow.cpp.obj
+
+.PHONY : code/main/InitWindow.obj
+
+# target to build an object file
+code/main/InitWindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj
+.PHONY : code/main/InitWindow.cpp.obj
+
+code/main/InitWindow.i: code/main/InitWindow.cpp.i
+
+.PHONY : code/main/InitWindow.i
+
+# target to preprocess a source file
+code/main/InitWindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.i
+.PHONY : code/main/InitWindow.cpp.i
+
+code/main/InitWindow.s: code/main/InitWindow.cpp.s
+
+.PHONY : code/main/InitWindow.s
+
+# target to generate assembly for a file
+code/main/InitWindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.s
+.PHONY : code/main/InitWindow.cpp.s
+
+code/main/main.obj: code/main/main.cpp.obj
+
+.PHONY : code/main/main.obj
+
+# target to build an object file
+code/main/main.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/main.cpp.obj
+.PHONY : code/main/main.cpp.obj
+
+code/main/main.i: code/main/main.cpp.i
+
+.PHONY : code/main/main.i
+
+# target to preprocess a source file
+code/main/main.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/main.cpp.i
+.PHONY : code/main/main.cpp.i
+
+code/main/main.s: code/main/main.cpp.s
+
+.PHONY : code/main/main.s
+
+# target to generate assembly for a file
+code/main/main.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/main/main.cpp.s
+.PHONY : code/main/main.cpp.s
 
 code/mesh/Model.obj: code/mesh/Model.cpp.obj
 
@@ -365,33 +392,6 @@ code/shader/Shader.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.s
 .PHONY : code/shader/Shader.cpp.s
 
-main.obj: main.cpp.obj
-
-.PHONY : main.obj
-
-# target to build an object file
-main.cpp.obj:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/main.cpp.obj
-.PHONY : main.cpp.obj
-
-main.i: main.cpp.i
-
-.PHONY : main.i
-
-# target to preprocess a source file
-main.cpp.i:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/main.cpp.i
-.PHONY : main.cpp.i
-
-main.s: main.cpp.s
-
-.PHONY : main.s
-
-# target to generate assembly for a file
-main.cpp.s:
-	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/main.cpp.s
-.PHONY : main.cpp.s
-
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -401,15 +401,18 @@ help:
 	@echo ... OpenGL
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... InitWindow.obj
-	@echo ... InitWindow.i
-	@echo ... InitWindow.s
 	@echo ... Prism.obj
 	@echo ... Prism.i
 	@echo ... Prism.s
 	@echo ... Triangle.obj
 	@echo ... Triangle.i
 	@echo ... Triangle.s
+	@echo ... code/main/InitWindow.obj
+	@echo ... code/main/InitWindow.i
+	@echo ... code/main/InitWindow.s
+	@echo ... code/main/main.obj
+	@echo ... code/main/main.i
+	@echo ... code/main/main.s
 	@echo ... code/mesh/Model.obj
 	@echo ... code/mesh/Model.i
 	@echo ... code/mesh/Model.s
@@ -428,9 +431,6 @@ help:
 	@echo ... code/shader/Shader.obj
 	@echo ... code/shader/Shader.i
 	@echo ... code/shader/Shader.s
-	@echo ... main.obj
-	@echo ... main.i
-	@echo ... main.s
 .PHONY : help
 
 

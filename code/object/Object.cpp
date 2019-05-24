@@ -5,8 +5,17 @@
 #include "Object.h"
 
 
-void Object::update() {
+void Object::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
 
+    float distance = glm::distance(positionCamera, glm::vec3(getAbsolutePosition()[3].x, getAbsolutePosition()[3].y, getAbsolutePosition()[3].z));
+
+    setVisible(distance <= 10);
+
+    if(isVisible()){
+        for (int i = 0; i < getChildren().size(); i++){
+            getChildren()[i]->update(positionCamera, directionCamera);
+        }
+    }
 }
 
 void Object::render(Shader * shader) {

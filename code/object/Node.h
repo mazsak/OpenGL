@@ -10,6 +10,7 @@
 #include "../../glm/glm/gtx/transform.hpp"
 #include "../../glm/glm/gtc/matrix_transform.hpp"
 #include "../shader/Shader.h"
+#include <iostream>
 
 class Node {
 private:
@@ -56,7 +57,7 @@ public:
 
     void setVisible(bool visible);
 
-    void update();
+    virtual void update(glm::vec3 positionCamera, glm::vec3 directionCamera);
 
     virtual void render(Shader * shader);
 

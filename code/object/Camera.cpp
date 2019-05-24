@@ -28,7 +28,7 @@ Camera::Camera(unsigned int id, Node *parent, float width, float height) : Node(
             glm::vec3(0, 0, 0),
             glm::vec3(0, 1, 0)
     );
-    position = glm::vec3(0, 0, 0);
+    setTranslation(glm::vec3(0, 0, 0));
 }
 
 void Camera::move(GLFWwindow **window) {
@@ -46,9 +46,7 @@ void Camera::move(GLFWwindow **window) {
     anglex += speed * deltaTime * float(0 - xpos);
     angley += speed * deltaTime * float(0 - ypos);
 
-    anglexR += float(0 - xpos);
-    angleyR += float(0 - ypos);
-    anglezR += float(0 - zpos);
+    setRotation(glm::vec3( float(0 - xpos), float(0 - ypos), float(0 - zpos)));
 
     glm::vec3 direction(
             cos(angley) * sin(anglex),
@@ -66,27 +64,27 @@ void Camera::move(GLFWwindow **window) {
 
     //run
     if (glfwGetKey(*window, GLFW_KEY_UP) == GLFW_PRESS) {
-        position += direction * deltaTime * speed;
+        setTranslation(getTranslation() + direction * deltaTime * speed);
     }
 
     if (glfwGetKey(*window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-        position -= direction * deltaTime * speed;
+        setTranslation(getTranslation() - direction * deltaTime * speed);
     }
 
     if (glfwGetKey(*window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
-        position += right * deltaTime * speed;
+        setTranslation(getTranslation() + right * deltaTime * speed);
     }
 
     if (glfwGetKey(*window, GLFW_KEY_LEFT) == GLFW_PRESS) {
-        position -= right * deltaTime * speed;
+        setTranslation(getTranslation() - right * deltaTime * speed);
     }
 
     if (glfwGetKey(*window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-        position += up * deltaTime * speed;
+        setTranslation(getTranslation() + up * deltaTime * speed);
     }
 
     if (glfwGetKey(*window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-        position -= up * deltaTime * speed;
+        setTranslation(getTranslation() - up * deltaTime * speed);
     }
 
 
@@ -119,10 +117,10 @@ void Camera::move(GLFWwindow **window) {
         xpos = 0;
         ypos = 0;
         zpos = 0;
-        position = glm::vec3(0, 0, 0);
+        setTranslation(glm::vec3(0, 0, 0));
     }
 
-    Camera::setView(position, position + glm::vec3(anglexR, angleyR, anglezR), glm::vec3(0, 1, 0));
+    Camera::setView(getTranslation(), getTranslation() + getRotation(), glm::vec3(0, 1, 0));
 
     lastTime = currentTime;
 }

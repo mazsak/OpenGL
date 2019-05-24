@@ -62,28 +62,28 @@ GL/glext.h
 GL/glu.h
 -
 
-D:/Projects/C++/CLion/OpenGL/InitWindow.cpp
+D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.cpp
 GL/glew.h
 -
 stdio.h
 -
 stdlib.h
 -
-code/mesh/Model.h
+../mesh/Model.h
 D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h
 InitWindow.h
-D:/Projects/C++/CLion/OpenGL/InitWindow.h
-code/shader/Shader.h
+D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.h
+../shader/Shader.h
 D:/Projects/C++/CLion/OpenGL/code/shader/Shader.h
-code/object/Object.h
+../object/Object.h
 D:/Projects/C++/CLion/OpenGL/code/object/Object.h
-code/object/Light.h
+../object/Light.h
 D:/Projects/C++/CLion/OpenGL/code/object/Light.h
 
-D:/Projects/C++/CLion/OpenGL/InitWindow.h
+D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.h
 GLFW/glfw3.h
 -
-code/object/Camera.h
+../object/Camera.h
 D:/Projects/C++/CLion/OpenGL/code/object/Camera.h
 
 D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h
@@ -110,6 +110,10 @@ D:/Projects/C++/CLion/OpenGL/code/object/Light.h
 Node.h
 D:/Projects/C++/CLion/OpenGL/code/object/Node.h
 
+D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp
+Node.h
+D:/Projects/C++/CLion/OpenGL/code/object/Node.h
+
 D:/Projects/C++/CLion/OpenGL/code/object/Node.h
 vector
 -
@@ -121,6 +125,12 @@ D:/Projects/C++/CLion/OpenGL/glm/glm/gtx/transform.hpp
 D:/Projects/C++/CLion/OpenGL/glm/glm/gtc/matrix_transform.hpp
 ../shader/Shader.h
 D:/Projects/C++/CLion/OpenGL/code/shader/Shader.h
+iostream
+-
+
+D:/Projects/C++/CLion/OpenGL/code/object/Object.cpp
+Object.h
+D:/Projects/C++/CLion/OpenGL/code/object/Object.h
 
 D:/Projects/C++/CLion/OpenGL/code/object/Object.h
 GL/glew.h

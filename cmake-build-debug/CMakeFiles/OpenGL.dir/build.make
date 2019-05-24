@@ -56,33 +56,33 @@ include CMakeFiles/OpenGL.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OpenGL.dir/flags.make
 
-CMakeFiles/OpenGL.dir/main.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
-CMakeFiles/OpenGL.dir/main.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/main.cpp.obj: ../main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/main.cpp.obj"
-	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\main.cpp.obj -c D:\Projects\C++\CLion\OpenGL\main.cpp
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/main/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/code/main/main.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\main.cpp.obj -c D:\Projects\C++\CLion\OpenGL\code\main\main.cpp
 
-CMakeFiles/OpenGL.dir/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/main.cpp.i"
-	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\main.cpp > CMakeFiles\OpenGL.dir\main.cpp.i
+CMakeFiles/OpenGL.dir/code/main/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/main/main.cpp.i"
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\code\main\main.cpp > CMakeFiles\OpenGL.dir\code\main\main.cpp.i
 
-CMakeFiles/OpenGL.dir/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/main.cpp.s"
-	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\main.cpp -o CMakeFiles\OpenGL.dir\main.cpp.s
+CMakeFiles/OpenGL.dir/code/main/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/main/main.cpp.s"
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\code\main\main.cpp -o CMakeFiles\OpenGL.dir\code\main\main.cpp.s
 
-CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
-CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
-CMakeFiles/OpenGL.dir/InitWindow.cpp.obj: ../InitWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL.dir/InitWindow.cpp.obj"
-	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\InitWindow.cpp.obj -c D:\Projects\C++\CLion\OpenGL\InitWindow.cpp
+CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
+CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
+CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: ../code/main/InitWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.obj -c D:\Projects\C++\CLion\OpenGL\code\main\InitWindow.cpp
 
-CMakeFiles/OpenGL.dir/InitWindow.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/InitWindow.cpp.i"
-	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\InitWindow.cpp > CMakeFiles\OpenGL.dir\InitWindow.cpp.i
+CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.i"
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\code\main\InitWindow.cpp > CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.i
 
-CMakeFiles/OpenGL.dir/InitWindow.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/InitWindow.cpp.s"
-	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\InitWindow.cpp -o CMakeFiles\OpenGL.dir\InitWindow.cpp.s
+CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.s"
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\code\main\InitWindow.cpp -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.s
 
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
@@ -198,8 +198,8 @@ CMakeFiles/OpenGL.dir/code/object/Light.cpp.s: cmake_force
 
 # Object files for target OpenGL
 OpenGL_OBJECTS = \
-"CMakeFiles/OpenGL.dir/main.cpp.obj" \
-"CMakeFiles/OpenGL.dir/InitWindow.cpp.obj" \
+"CMakeFiles/OpenGL.dir/code/main/main.cpp.obj" \
+"CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj" \
 "CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj" \
 "CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj" \
 "CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj" \
@@ -212,8 +212,8 @@ OpenGL_OBJECTS = \
 # External object files for target OpenGL
 OpenGL_EXTERNAL_OBJECTS =
 
-OpenGL.exe: CMakeFiles/OpenGL.dir/main.cpp.obj
-OpenGL.exe: CMakeFiles/OpenGL.dir/InitWindow.cpp.obj
+OpenGL.exe: CMakeFiles/OpenGL.dir/code/main/main.cpp.obj
+OpenGL.exe: CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj
 OpenGL.exe: CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj

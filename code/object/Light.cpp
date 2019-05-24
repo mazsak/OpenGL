@@ -6,9 +6,12 @@
 #include "Light.h"
 
 void Light::render(Shader *shader) {
-    glUniform3f(shader->getLightPositionId(), Light::getTranslation().x, Light::getTranslation().y, Light::getTranslation().z);
-    glUniform3f(shader->getLightColorId(), Light::getColor().x, Light::getColor().y, Light::getColor().z);
-    glUniform1f(shader->getLightPowerId(), Light::getPower());
+    if(isVisible()) {
+        glUniform3f(shader->getLightPositionId(), Light::getTranslation().x, Light::getTranslation().y,
+                    Light::getTranslation().z);
+        glUniform3f(shader->getLightColorId(), Light::getColor().x, Light::getColor().y, Light::getColor().z);
+        glUniform1f(shader->getLightPowerId(), Light::getPower());
+    }
 
 }
 
@@ -29,4 +32,8 @@ const glm::vec3 &Light::getColor() const {
 
 void Light::setColor(const glm::vec3 &color) {
     Light::color = color;
+}
+
+void Light::update(glm::vec3 positionCamera, glm::vec3 directionCamera){
+    setVisible(true);
 }

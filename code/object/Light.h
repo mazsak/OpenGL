@@ -26,6 +26,8 @@ public:
 
     void setColor(const glm::vec3 &color);
 
+    void update(glm::vec3 positionCamera, glm::vec3 directionCamera);
+
 };
 
 

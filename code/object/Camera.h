@@ -10,8 +10,7 @@ private:
 
     glm::mat4 Projection;
     glm::mat4 View;
-    glm::vec3 position;
-    float xpos = 0.0f, ypos = 0.0f, zpos = 0.0f;
+    float xpos = 0.0f, ypos = 0.0f, zpos = -4.0f;
 
 public:
 
