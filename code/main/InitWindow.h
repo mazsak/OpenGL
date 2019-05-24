@@ -21,6 +21,7 @@ private:
     Light *sun;
     int width;
     int height;
+    int number;
 
 public:
     InitWindow(int width, int height, const char *nameWindow);
@@ -37,9 +38,9 @@ public:
 
     void mainLoop();
 
-    void generateForest(int number, Model *model);
+    void generateForest(Model *model);
 
-    void addNode(int *number, Model *model, Node *parent, int level, int size);
+    void addNode(Model *model, Node *parent, int level, int size);
 };
 
 #endif

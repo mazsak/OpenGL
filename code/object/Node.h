@@ -22,6 +22,7 @@ private:
     glm::vec3 rotation;
     glm::vec3 scale;
     bool visible;
+    float size;
 public:
     Node(unsigned int id, Node *parent);
 
@@ -68,6 +69,10 @@ public:
     void updateAbsolutePosition();
 
     glm::mat4 getRelativePosition();
+
+    float getSize() const;
+
+    void setSize(float size);
 };
 
 

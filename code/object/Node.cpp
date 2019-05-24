@@ -72,6 +72,11 @@ void Node::setVisible(bool visible) {
 }
 
 void Node::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
+
+    float distance = glm::distance(positionCamera, glm::vec3(getAbsolutePosition()[3].x, getAbsolutePosition()[3].y, getAbsolutePosition()[3].z));
+
+    setVisible(distance <= size*4);
+
     if(isVisible()){
         for (int i = 0; i < getChildren().size(); i++){
             getChildren()[i]->update(positionCamera, directionCamera);
@@ -124,4 +129,12 @@ glm::mat4 Node::getRelativePosition() {
     modelMatrix = glm::scale(modelMatrix, Node::scale);
 
     return modelMatrix;
+}
+
+float Node::getSize() const {
+    return size;
+}
+
+void Node::setSize(float size) {
+    Node::size = size;
 }

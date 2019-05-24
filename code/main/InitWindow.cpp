@@ -33,7 +33,8 @@ void InitWindow::mainLoop() {
                              (char *) "models_blender/stump/stump.bmp",
                              (char *) "models_blender/stump/stump.mtl");
 
-    generateForest(1000, stump);
+    number = 1000;
+    generateForest(stump);
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -108,15 +109,15 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
                         (char *) "code/shader/FragmentShaderObject.cpp");
 
     root = new Node(0, nullptr);
-    sun = new Light(1, root, 50.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    sun = new Light(1, root, 10000.0f, glm::vec3(1.0f, 1.0f, 1.0f));
     camera = new Camera(2, root, width, height);
 
-    sun->setTranslation(glm::vec3(4.0, 4.0, 4.0));
+    sun->setTranslation(glm::vec3(0.0, 80.0, 0.0));
     sun->updateAbsolutePosition();
 
 }
 
-void InitWindow::generateForest(int number, Model *model) {
+void InitWindow::generateForest(Model *model) {
     float check = glm::pow((double) number, 0.25);
     int level = check;
 
@@ -126,23 +127,24 @@ void InitWindow::generateForest(int number, Model *model) {
 
     int size = glm::pow(2, level - 1) * 4;
 
-    InitWindow::addNode(&number, model, root, level, size);
+    InitWindow::addNode(model, root, level, size/2);
 
 }
 
-void InitWindow::addNode(int *number, Model *model, Node *parent, int level, int size) {
+void InitWindow::addNode(Model *model, Node *parent, int level, int size) {
     std::vector<glm::vec3> place;
     place.emplace_back(size, 0, size);
     place.emplace_back(-size, 0, size);
     place.emplace_back(-size, 0, -size);
     place.emplace_back(size, 0, -size);
 
-    if (level != 0) {
+    if (level != 1) {
         for (int i = 0; i < 4; i++) {
             Node *node = new Node(parent->getId() * i, parent);
+            node->setSize(size);
             node->setTranslation(place[i]);
             node->updateAbsolutePosition();
-            InitWindow::addNode(&*number, model, node, level - 1, size / 2);
+            InitWindow::addNode(model, node, level - 1, size / 2);
         }
     } else {
         for (int i = 0; i < 4; i++) {
