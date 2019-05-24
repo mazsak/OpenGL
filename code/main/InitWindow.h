@@ -3,6 +3,9 @@
 
 #include <GLFW/glfw3.h>
 #include "../object/Camera.h"
+#include "../object/Light.h"
+#include "../mesh/Model.h"
+#include "../object/Object.h"
 
 class InitWindow {
 private:
@@ -13,6 +16,9 @@ private:
     GLclampf alpha = 0.0f;
     GLuint VertexArrayID;
     Shader *shader;
+    Node *root;
+    Camera *camera;
+    Light *sun;
     int width;
     int height;
 
@@ -30,6 +36,10 @@ public:
     void setAlpha(GLclampf alpha);
 
     void mainLoop();
+
+    void generateForest(int number, Model *model);
+
+    void addNode(int number, Model *model, Node *parent);
 };
 
 #endif

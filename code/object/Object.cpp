@@ -8,8 +8,11 @@
 void Object::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
 
     float distance = glm::distance(positionCamera, glm::vec3(getAbsolutePosition()[3].x, getAbsolutePosition()[3].y, getAbsolutePosition()[3].z));
+    float size = glm::distance(getScale()*model->getMax(), getScale()*model->getMin());
 
-    setVisible(distance <= 10);
+    float show = distance-size;
+
+    setVisible(show <= 20);
 
     if(isVisible()){
         for (int i = 0; i < getChildren().size(); i++){

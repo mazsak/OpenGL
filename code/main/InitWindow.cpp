@@ -1,11 +1,8 @@
 #include <GL/glew.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include "../mesh/Model.h"
 #include "InitWindow.h"
 #include "../shader/Shader.h"
-#include "../object/Object.h"
-#include "../object/Light.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -36,24 +33,7 @@ void InitWindow::mainLoop() {
                              (char *) "models_blender/stump/stump.bmp",
                              (char *) "models_blender/stump/stump.mtl");
 
-    Node *root = new Node(0, nullptr);
-    Light *sun = new Light(1, root, 50.0f, glm::vec3(1.0f, 1.0f, 1.0f));
-    Camera *camera = new Camera(3, root, width, height);
-    Object *object = new Object(1, root, stump);
-    Object *object1 = new Object(2, object, stump);
-    Object *object2 = new Object(2, object1, stump);
-    Object *object3 = new Object(2, object2, stump);
-
-    sun->setTranslation(glm::vec3(4.0, 4.0, 4.0));
-    sun->updateAbsolutePosition();
-
-    object1->setTranslation(glm::vec3(4.0, 0.0, 0.0));
-    object1->updateAbsolutePosition();
-    object2->setTranslation(glm::vec3(4.0, 0.0, 0.0));
-    object2->updateAbsolutePosition();
-    object3->setTranslation(glm::vec3(4.0, 0.0, 0.0));
-    object3->updateAbsolutePosition();
-
+    generateForest(16, stump);
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -127,5 +107,33 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     shader = new Shader((char *) "code/shader/VertexShaderObject.cpp",
                         (char *) "code/shader/FragmentShaderObject.cpp");
 
+    root = new Node(0, nullptr);
+    sun = new Light(1, root, 50.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    camera = new Camera(2, root, width, height);
+
+    sun->setTranslation(glm::vec3(4.0, 4.0, 4.0));
+    sun->updateAbsolutePosition();
+
 }
+
+void InitWindow::generateForest(int number, Model *model) {
+    float check = glm::pow((double)number, 0.25);
+    int level = check;
+
+    if(level != check){
+        level++;
+    }
+
+    int size = glm::pow(2,level - 1)*4;
+    for (int i = 1; i < level; ++i) {
+        if()
+    }
+
+}
+
+void InitWindow::addNode(int number, Model *model, Node *parent) {
+
+}
+
+
 

@@ -21,6 +21,7 @@ private:
     glm::vec3 diffuse;
     glm::vec3 specular;
     GLuint texture;
+    glm::vec3 min, max;
 
     bool loadModel(char *nameFileModel);
 
@@ -48,6 +49,10 @@ public:
     void setNormals(const std::vector<glm::vec3> &normals);
 
     GLuint getTexture() const;
+
+    const glm::vec3 &getMin() const;
+
+    const glm::vec3 &getMax() const;
 
 };
 

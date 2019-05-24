@@ -188,8 +188,11 @@ CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../glew-2.1.0/include/GL/glew.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/main/InitWindow.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/main/main.cpp
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/mesh/Model.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/object/Camera.h
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/object/Light.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/object/Node.h
+CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/object/Object.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/shader/Shader.h
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../glm/glm/common.hpp
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../glm/glm/detail/_fixes.hpp

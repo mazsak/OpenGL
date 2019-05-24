@@ -189,8 +189,11 @@ CMakeFiles/OpenGL.dir/code/main/main.cpp.obj
  ../glfw-3.2.1.bin.WIN32/include/GLFW/glfw3.h
  D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.h
  D:/Projects/C++/CLion/OpenGL/code/main/main.cpp
+ D:/Projects/C++/CLion/OpenGL/code/mesh/Model.h
  D:/Projects/C++/CLion/OpenGL/code/object/Camera.h
+ D:/Projects/C++/CLion/OpenGL/code/object/Light.h
  D:/Projects/C++/CLion/OpenGL/code/object/Node.h
+ D:/Projects/C++/CLion/OpenGL/code/object/Object.h
  D:/Projects/C++/CLion/OpenGL/code/shader/Shader.h
  D:/Projects/C++/CLion/OpenGL/glm/glm/common.hpp
  D:/Projects/C++/CLion/OpenGL/glm/glm/detail/_fixes.hpp

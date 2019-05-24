@@ -33,6 +33,8 @@ bool Model::loadModel(char *nameFileModel) {
     std::vector<glm::vec2> temp_uvs;
     std::vector<glm::vec3> temp_normals;
 
+    min = glm::vec3(10000, 10000, 10000);
+    max = glm::vec3(0, 0, 0);
 
     FILE *file = fopen(nameFileModel, "r");
     if (file == NULL) {
@@ -54,6 +56,25 @@ bool Model::loadModel(char *nameFileModel) {
             glm::vec3 vertex;
             fscanf(file, "%f %f %f\n", &vertex.x, &vertex.y, &vertex.z);
             temp_vertices.push_back(vertex);
+
+            if(max.x < vertex.x){
+                max.x = vertex.x;
+            }else if (min.x > vertex.x){
+                min.x = vertex.x;
+            }
+
+            if(max.y < vertex.y){
+                max.y = vertex.y;
+            }else if (min.y > vertex.y){
+                min.y = vertex.y;
+            }
+
+            if(max.z < vertex.z){
+                max.z = vertex.z;
+            }else if (min.z > vertex.z){
+                min.z = vertex.z;
+            }
+
         } else if (strcmp(lineHeader, "vt") == 0) {
             glm::vec2 uv;
             fscanf(file, "%f %f\n", &uv.x, &uv.y);
@@ -310,5 +331,13 @@ void Model::clear() {
     glDeleteBuffers(1, &uvbuffer);
     glDeleteTextures(1, &texture);
 
+}
+
+const glm::vec3 &Model::getMin() const {
+    return min;
+}
+
+const glm::vec3 &Model::getMax() const {
+    return max;
 }
 
