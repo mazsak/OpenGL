@@ -28,7 +28,7 @@ Camera::Camera(unsigned int id, Node *parent, float width, float height) : Node(
             glm::vec3(0, 0, 0),
             glm::vec3(0, 1, 0)
     );
-    setTranslation(glm::vec3(0, 0, 0));
+    setTranslation(glm::vec3(0, 4, 0));
 }
 
 void Camera::move(GLFWwindow **window) {
@@ -46,7 +46,7 @@ void Camera::move(GLFWwindow **window) {
     anglex += speed * deltaTime * float(0 - xpos);
     angley += speed * deltaTime * float(0 - ypos);
 
-    setRotation(glm::vec3( float(0 - xpos), float(0 - ypos), float(0 - zpos)));
+    setRotation(glm::vec3(float(0 - xpos), float(0 - ypos), float(0 - zpos)));
 
     glm::vec3 direction(
             cos(angley) * sin(anglex),
@@ -120,7 +120,9 @@ void Camera::move(GLFWwindow **window) {
         setTranslation(glm::vec3(0, 0, 0));
     }
 
-    Camera::setView(getTranslation(), getTranslation() + getRotation(), glm::vec3(0, 1, 0));
+    Camera::setView(getTranslation(),
+                    glm::vec3(getTranslation().x + getRotation().x, getTranslation().y + getRotation().y,
+                              getTranslation().z + getRotation().z), glm::vec3(0, 1, 0));
 
     lastTime = currentTime;
 }

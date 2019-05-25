@@ -12,7 +12,7 @@ void Object::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
 
     float show = distance-size;
 
-    setVisible(show <= 20);
+    setVisible(show <= 30);
 
     if(isVisible()){
         for (int i = 0; i < getChildren().size(); i++){

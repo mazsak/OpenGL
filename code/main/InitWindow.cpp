@@ -29,12 +29,12 @@ void InitWindow::setAlpha(GLclampf alpha) {
 }
 
 void InitWindow::mainLoop() {
-    Model *stump = new Model((char *) "models_blender/stump/stump.obj",
-                             (char *) "models_blender/stump/stump.bmp",
-                             (char *) "models_blender/stump/stump.mtl");
+    Model *stump = new Model((char *) "models_blender/monkey/monkey.obj",
+                             (char *) "models_blender/monkey/monkey.bmp",
+                             (char *) "models_blender/monkey/monkey.mtl");
 
-    number = 1000;
-    generateForest(stump);
+    levelForest = 10;
+    generateForest(1, stump, root, 1);
 
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -108,54 +108,41 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     shader = new Shader((char *) "code/shader/VertexShaderObject.cpp",
                         (char *) "code/shader/FragmentShaderObject.cpp");
 
-    root = new Node(0, nullptr);
-    sun = new Light(1, root, 10000.0f, glm::vec3(1.0f, 1.0f, 1.0f));
-    camera = new Camera(2, root, width, height);
+    root = new Node(counter, nullptr);
+    counter++;
+    sun = new Light(counter, root, 100000.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    counter++;
+    camera = new Camera(counter, root, width, height);
+    counter++;
 
     sun->setTranslation(glm::vec3(0.0, 80.0, 0.0));
     sun->updateAbsolutePosition();
 
 }
 
-void InitWindow::generateForest(Model *model) {
-    float check = glm::pow((double) number, 0.25);
-    int level = check;
+void InitWindow::generateForest(int level, Model *model, Node *parent, float size) {
+    float distance = levelForest * (levelForest + 1) * size;
+    std::vector<glm::vec3> position;
+    position.emplace_back(distance, 0, distance);
+    position.emplace_back(-distance, 0, distance);
+    position.emplace_back(-distance, 0, -distance);
+    position.emplace_back(distance, 0, -distance);
 
-    if (level != check) {
-        level++;
-    }
-
-    int size = glm::pow(2, level - 1) * 4;
-
-    InitWindow::addNode(model, root, level, size/2);
-
-}
-
-void InitWindow::addNode(Model *model, Node *parent, int level, int size) {
-    std::vector<glm::vec3> place;
-    place.emplace_back(size, 0, size);
-    place.emplace_back(-size, 0, size);
-    place.emplace_back(-size, 0, -size);
-    place.emplace_back(size, 0, -size);
-
-    if (level != 1) {
+    if (level != levelForest) {
         for (int i = 0; i < 4; i++) {
-            Node *node = new Node(parent->getId() * i, parent);
+            Node *node = new Node(counter, parent);
+            counter++;
+            node->setTranslation(position[i]);
             node->setSize(size);
-            node->setTranslation(place[i]);
             node->updateAbsolutePosition();
-            InitWindow::addNode(model, node, level - 1, size / 2);
+            InitWindow::generateForest(level + 1, model, node, size / 2);
         }
     } else {
         for (int i = 0; i < 4; i++) {
-            if (number != 0) {
-                Object *object = new Object(parent->getId() * i, parent, model);
-                object->setTranslation(place[i]);
-                object->updateAbsolutePosition();
-                number--;
-            } else {
-                break;
-            }
+            Object *object = new Object(counter, parent, model);
+            counter++;
+            object->setTranslation(position[i]);
+            object->updateAbsolutePosition();
         }
     }
 }

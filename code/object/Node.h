@@ -23,6 +23,7 @@ private:
     glm::vec3 scale;
     bool visible;
     float size;
+
 public:
     Node(unsigned int id, Node *parent);
 
