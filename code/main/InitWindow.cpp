@@ -33,7 +33,7 @@ void InitWindow::mainLoop() {
                              (char *) "models_blender/monkey/monkey.bmp",
                              (char *) "models_blender/monkey/monkey.mtl");
 
-    levelForest = 10;
+    levelForest = 11;
     generateForest(1, stump, root, 1);
 
     do {
@@ -121,7 +121,7 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
 }
 
 void InitWindow::generateForest(int level, Model *model, Node *parent, float size) {
-    float distance = levelForest * (levelForest + 1) * size;
+    float distance = glm::pow(2, levelForest) * size;
     std::vector<glm::vec3> position;
     position.emplace_back(distance, 0, distance);
     position.emplace_back(-distance, 0, distance);
