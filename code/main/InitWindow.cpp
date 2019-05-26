@@ -33,7 +33,7 @@ void InitWindow::mainLoop() {
                              (char *) "models_blender/monkey/monkey.bmp",
                              (char *) "models_blender/monkey/monkey.mtl");
 
-    levelForest = 11;
+    levelForest = 10;
     generateForest(1, stump, root, 1);
 
     do {
@@ -133,7 +133,7 @@ void InitWindow::generateForest(int level, Model *model, Node *parent, float siz
             Node *node = new Node(counter, parent);
             counter++;
             node->setTranslation(position[i]);
-            node->setSize(size);
+            node->setSize(distance*2);
             node->updateAbsolutePosition();
             InitWindow::generateForest(level + 1, model, node, size / 2);
         }
