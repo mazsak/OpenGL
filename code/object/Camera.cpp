@@ -32,99 +32,54 @@ Camera::Camera(unsigned int id, Node *parent, float width, float height) : Node(
 }
 
 void Camera::move(GLFWwindow **window) {
-    static double lastTime = glfwGetTime();
+
     double currentTime = glfwGetTime();
+    deltaTime = float(currentTime - lastFrame);
 
-    float deltaTime = float(currentTime - lastTime);
+    float speed = speedCamera * deltaTime;
 
-    float anglex = 3.14f, angley = 0.0f;
-    float anglexR = 3.14f, angleyR = 0.0f, anglezR = 0.0f;
+    double x, y;
+    glfwGetCursorPos(*window, &x, &y);
 
-    float speed = 3.0f;
-    float speedRotation = speed * 2;
-
-    anglex += speed * deltaTime * float(0 - xpos);
-    angley += speed * deltaTime * float(0 - ypos);
-
-    setRotation(glm::vec3(float(0 - xpos), float(0 - ypos), float(0 - zpos)));
-
-    glm::vec3 direction(
-            cos(angley) * sin(anglex),
-            sin(angley),
-            cos(angley) * cos(anglex)
-    );
-
-    glm::vec3 right = glm::vec3(
-            sin(anglex - 3.14f / 2.0f),
-            0,
-            cos(anglex - 3.14f / 2.0f)
-    );
-
-    glm::vec3 up = glm::cross(right, direction);
-
-    //run
-    if (glfwGetKey(*window, GLFW_KEY_UP) == GLFW_PRESS) {
-        setTranslation(getTranslation() + direction * deltaTime * speed);
+    if (first) {
+        lastMousePosition.x = x;
+        lastMousePosition.y = y;
+        first = false;
     }
 
-    if (glfwGetKey(*window, GLFW_KEY_DOWN) == GLFW_PRESS) {
-        setTranslation(getTranslation() - direction * deltaTime * speed);
-    }
+    glm::vec2 offset = glm::vec2((x - lastMousePosition.x) * sensitivity,
+                                 (lastMousePosition.y - y) * sensitivity);
 
-    if (glfwGetKey(*window, GLFW_KEY_RIGHT) == GLFW_PRESS) {
-        setTranslation(getTranslation() + right * deltaTime * speed);
-    }
+    lastMousePosition.x = x;
+    lastMousePosition.y = y;
 
-    if (glfwGetKey(*window, GLFW_KEY_LEFT) == GLFW_PRESS) {
-        setTranslation(getTranslation() - right * deltaTime * speed);
-    }
+    yaw += offset.x;
+    pitch += offset.y;
 
-    if (glfwGetKey(*window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS) {
-        setTranslation(getTranslation() + up * deltaTime * speed);
-    }
+    if (pitch > 89.0f)
+        pitch = 89.0f;
+    if (pitch < -89.0f)
+        pitch = -89.0f;
 
-    if (glfwGetKey(*window, GLFW_KEY_LEFT_CONTROL) == GLFW_PRESS) {
-        setTranslation(getTranslation() - up * deltaTime * speed);
-    }
+    setRotation(glm::normalize(glm::vec3(cos(glm::radians(yaw)) * cos(glm::radians(pitch)), sin(glm::radians(pitch)),
+                                         sin(glm::radians(yaw)) * cos(glm::radians(pitch)))));
+
+    if (glfwGetKey(*window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
+        speed *= 12;
+
+    if (glfwGetKey(*window, GLFW_KEY_W) == GLFW_PRESS)
+        setTranslation(getTranslation() + getRotation() * speed);
+    if (glfwGetKey(*window, GLFW_KEY_S) == GLFW_PRESS)
+        setTranslation(getTranslation() - getRotation() * speed);
+    if (glfwGetKey(*window, GLFW_KEY_D) == GLFW_PRESS)
+        setTranslation(getTranslation() + glm::normalize(glm::cross(getRotation(), cameraUp)) * speed);
+    if (glfwGetKey(*window, GLFW_KEY_A) == GLFW_PRESS)
+        setTranslation(getTranslation() - glm::normalize(glm::cross(getRotation(), cameraUp)) * speed);
 
 
-    //rotation
-    if (glfwGetKey(*window, GLFW_KEY_KP_8) == GLFW_PRESS) {
-        xpos += speedRotation * deltaTime;
-    }
+    Camera::setView(getTranslation(), getTranslation() + getRotation(), cameraUp);
 
-    if (glfwGetKey(*window, GLFW_KEY_KP_2) == GLFW_PRESS) {
-        xpos -= speedRotation * deltaTime;
-    }
-
-    if (glfwGetKey(*window, GLFW_KEY_KP_6) == GLFW_PRESS) {
-        ypos += speedRotation * deltaTime;
-    }
-
-    if (glfwGetKey(*window, GLFW_KEY_KP_4) == GLFW_PRESS) {
-        ypos -= speedRotation * deltaTime;
-    }
-
-    if (glfwGetKey(*window, GLFW_KEY_KP_7) == GLFW_PRESS) {
-        zpos += speedRotation * deltaTime;
-    }
-
-    if (glfwGetKey(*window, GLFW_KEY_KP_9) == GLFW_PRESS) {
-        zpos -= speedRotation * deltaTime;
-    }
-
-    if (glfwGetKey(*window, GLFW_KEY_Q) == GLFW_PRESS) {
-        xpos = 0;
-        ypos = 0;
-        zpos = 0;
-        setTranslation(glm::vec3(0, 0, 0));
-    }
-
-    Camera::setView(getTranslation(),
-                    glm::vec3(getTranslation().x + getRotation().x, getTranslation().y + getRotation().y,
-                              getTranslation().z + getRotation().z), glm::vec3(0, 1, 0));
-
-    lastTime = currentTime;
+    lastFrame = currentTime;
 }
 
 const glm::mat4 &Camera::getView() const {
@@ -134,4 +89,20 @@ const glm::mat4 &Camera::getView() const {
 void Camera::render(Shader *shader) {
     glUniformMatrix4fv(shader->getProjectionMatrixId(), 1, GL_FALSE, &Camera::Projection[0][0]);
     glUniformMatrix4fv(shader->getViewMatrixId(), 1, GL_FALSE, &Camera::View[0][0]);
+}
+
+float Camera::getSpeedCamera() const {
+    return speedCamera;
+}
+
+void Camera::setSpeedCamera(float speedCamera) {
+    Camera::speedCamera = speedCamera;
+}
+
+float Camera::getSensitivity() const {
+    return sensitivity;
+}
+
+void Camera::setSensitivity(float sensitivity) {
+    Camera::sensitivity = sensitivity;
 }

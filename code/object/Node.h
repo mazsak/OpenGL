@@ -65,7 +65,7 @@ public:
 
     void addChildren(Node * children);
 
-    void animate();
+    virtual void animate();
 
     void updateAbsolutePosition();
 

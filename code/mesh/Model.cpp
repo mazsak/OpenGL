@@ -21,11 +21,12 @@ struct PackedIndex {
     };
 };
 
-Model::Model(char *nameFileModel, char *nameFileTexture, char* nameFileMtl) {
+Model::Model(char *nameFileModel, char *nameFileTexture, char *nameFileMtl) {
     loadModel(nameFileModel);
     loadTexture(nameFileTexture);
     loadMaterials(nameFileMtl);
 }
+
 
 bool Model::loadModel(char *nameFileModel) {
     std::vector<unsigned int> vertexIndices, uvIndices, normalIndices;
@@ -194,6 +195,8 @@ const glm::vec3 &Model::getSpecular() const {
 void Model::drawModel(Shader* shader) {
     glUniform3f(shader->getDiffuseId(), diffuse.x, diffuse.y, diffuse.z);
 
+    glDisable(GL_TEXTURE_2D);
+    glActiveTexture(GL_TEXTURE0);
     glUniform1i(shader->getTextureId(), 0);
     glBindTexture(GL_TEXTURE_2D, texture);
 

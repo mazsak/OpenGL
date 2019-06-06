@@ -10,7 +10,16 @@ private:
 
     glm::mat4 Projection;
     glm::mat4 View;
-    float xpos = 0.0f, ypos = 0.0f, zpos = -4.0f;
+    glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
+    float deltaTime= 0.0f;
+    float lastFrame= 0.0f;
+    float speedCamera = 5.0f;
+    glm::vec2 lastMousePosition;
+    bool first = true;
+    float sensitivity = 0.1f;
+    float yaw = -90.0f;
+    float pitch = 0.0f;
+
 
 public:
 
@@ -25,6 +34,14 @@ public:
     void move(GLFWwindow **window);
 
     const glm::mat4 &getView() const;
+
+    float getSpeedCamera() const;
+
+    void setSpeedCamera(float speedCamera);
+
+    float getSensitivity() const;
+
+    void setSensitivity(float sensitivity);
 
 };
 

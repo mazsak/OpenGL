@@ -41,6 +41,8 @@ public:
 
     void generateForest(int level, Model *model, Node *parent, float size);
 
+    void generateSolarSystem();
+
 };
 
 #endif

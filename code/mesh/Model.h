@@ -22,6 +22,7 @@ private:
     glm::vec3 specular;
     GLuint texture;
     glm::vec3 min, max;
+    GLenum enumTexture;
 
     bool loadModel(char *nameFileModel);
 
