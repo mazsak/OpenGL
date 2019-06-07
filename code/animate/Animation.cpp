@@ -3,6 +3,7 @@
 //
 
 #include <cstdio>
+#include <iostream>
 #include "Animation.h"
 
 Animation::Animation(int time) : time(time) {}
@@ -42,7 +43,6 @@ Frame Animation::calculateFrame() {
     currentFrame.translation = frames[numberFrame].translation + differenceTranslation * (currentTime / time);
     currentFrame.rotation = frames[numberFrame].rotation + differenceRotation * (currentTime / time);
     currentFrame.scale = frames[numberFrame].scale + differenceScale * (currentTime / time);
-
 
     if (currentTime == time) {
         numberFrame++;

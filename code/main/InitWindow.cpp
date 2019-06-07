@@ -110,8 +110,11 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
                         (char *) "code/shader/FragmentShaderObject.cpp");
 
     root = new Node(counter, nullptr);
+
+    root->setScale(glm::vec3(0.25, 0.25, 0.25));
+    root->updateAbsolutePosition();
     counter++;
-    sun = new Light(counter, root, 100000.0f, glm::vec3(1.0f, 1.0f, 1.0f));
+    sun = new Light(counter, root, 10000.0f, glm::vec3(1.0f, 1.0f, 1.0f));
     counter++;
     camera = new Camera(counter, root, width, height);
     camera->setTranslation(glm::vec3(10, 0, 0));
@@ -157,9 +160,9 @@ void InitWindow::generateSolarSystem() {
                                 (char *) "models_blender/solar_system/sun/sun_tex.bmp",
                                 (char *) "models_blender/solar_system/sun/sun.mtl");
 
-    Model *venusModel = new Model((char *) "models_blender/solar_system/venus/venus.obj",
-                                (char *) "models_blender/solar_system/venus/venus_tex.bmp",
-                                (char *) "models_blender/solar_system/venus/venus.mtl");
+    Model *venusModel = new Model((char *) "models_blender/solar_system/mars/mars.obj",
+                                  (char *) "models_blender/solar_system/mars/mars_tex.bmp",
+                                  (char *) "models_blender/solar_system/mars/mars.mtl");
 
     Model *mercuryModel = new Model((char *) "models_blender/solar_system/mercury/mercury.obj",
                                     (char *) "models_blender/solar_system/mercury/mercury_tex.bmp",
@@ -169,21 +172,21 @@ void InitWindow::generateSolarSystem() {
                                   (char *) "models_blender/solar_system/earth/earth_tex.bmp",
                                   (char *) "models_blender/solar_system/earth/earth.mtl");
 
-    Model *moonModel = new Model((char *) "models_blender/solar_system/moon/moon.obj",
+    Model *moonModel = new Model((char *) "models_blender/solar_system/venus/venus.obj",
+                                 (char *) "models_blender/solar_system/venus/venus_tex.bmp",
+                                 (char *) "models_blender/solar_system/venus/venus.mtl");
+
+    Model *marsModel = new Model((char *) "models_blender/solar_system/moon/moon.obj",
                                  (char *) "models_blender/solar_system/moon/moon_earth_tex.bmp",
                                  (char *) "models_blender/solar_system/moon/moon.mtl");
-
-    Model *marsModel = new Model((char *) "models_blender/solar_system/mars/mars.obj",
-                                 (char *) "models_blender/solar_system/mars/mars_tex.bmp",
-                                 (char *) "models_blender/solar_system/mars/mars.mtl");
 
     Model *jupiterModel = new Model((char *) "models_blender/solar_system/jupiter/jupiter.obj",
                                     (char *) "models_blender/solar_system/jupiter/jupiter_tex.bmp",
                                     (char *) "models_blender/solar_system/jupiter/jupiter.mtl");
 
     Model *saturnModel = new Model((char *) "models_blender/solar_system/saturn/saturn.obj",
-                                    (char *) "models_blender/solar_system/saturn/saturn_tex.bmp",
-                                    (char *) "models_blender/solar_system/saturn/saturn.mtl");
+                                   (char *) "models_blender/solar_system/saturn/saturn_tex.bmp",
+                                   (char *) "models_blender/solar_system/saturn/saturn.mtl");
 
 //    Model *ringsModel = new Model((char *) "models_blender/solar_system/rings/rings.obj",
 //                                   (char *) "models_blender/solar_system/rings/rings_tex.bmp",
@@ -194,25 +197,30 @@ void InitWindow::generateSolarSystem() {
                                    (char *) "models_blender/solar_system/uranus/uranus.mtl");
 
     Model *neptuneModel = new Model((char *) "models_blender/solar_system/neptune/neptune.obj",
-                                   (char *) "models_blender/solar_system/neptune/neptune_tex.bmp",
-                                   (char *) "models_blender/solar_system/neptune/neptune.mtl");
+                                    (char *) "models_blender/solar_system/neptune/neptune_tex.bmp",
+                                    (char *) "models_blender/solar_system/neptune/neptune.mtl");
 
 
 //    Object *venusObject = new Object(counter, root, venusModel);
 //    counter++;
 //    Object *mercuryObject = new Object(counter, root, mercuryModel);
 //    counter++;
+    Planet *venusObject = new Planet(counter, root, venusModel, 20.0f, 12.0f);
+    venusObject->setTime(256);
+    counter++;
     Object *moonObject = new Object(counter, root, moonModel);
     counter++;
-    Planet *sunObject = new Planet(counter, root, sunModel, 46.0f, 48.0f);
+    Planet *sunObject = new Planet(counter, root, sunModel, 46.0f, 98.0f);
     sunObject->setTime(256);
     counter++;
     Planet *earthObject = new Planet(counter, sunObject, earthModel, 10.0f, 0.0f);
     earthObject->setTime(30);
     earthObject->setSpeedChangeFrame(0.1f);
     counter++;
-//    Object *marsObject = new Object(counter, root, marsModel);
-//    counter++;
+    Planet *marsObject = new Planet(counter, root, marsModel, 98.0f, 100.0f);
+    marsObject->setTime(1024);
+    marsObject->setSpeedChangeFrame(0.05f);
+    counter++;
 //    Object *jupiterObject = new Object(counter, root, jupiterModel);
 //    counter++;
 //    Object *saturnObject = new Object(counter, root, saturnModel);

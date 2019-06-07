@@ -26,5 +26,5 @@ void main() {
 
     float cosTheta = clamp( dot( n,l ), 0,1 );
 
-    color = MaterialDiffuseColor * LightColor * LightPower * cosTheta / (distance * distance);
+    color = MaterialDiffuseColor /** LightColor * LightPower * cosTheta / (distance * distance)*/;
 }
