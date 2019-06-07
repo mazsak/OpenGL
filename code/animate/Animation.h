@@ -31,7 +31,7 @@ public:
 
     void addFrame(Frame frame);
 
-    Frame animate();
+    Frame calculateFrame();
 
     const std::vector<Frame> &getFrames() const;
 

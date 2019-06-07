@@ -1,4 +1,4 @@
-D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" D:\Projects\C++\CLion\OpenGL
+E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" E:\Project_CLoin\OpenGL
 -- Configuring done
 -- Generating done
--- Build files have been written to: D:/Projects/C++/CLion/OpenGL/cmake-build-debug
+-- Build files have been written to: E:/Project_CLoin/OpenGL/cmake-build-debug

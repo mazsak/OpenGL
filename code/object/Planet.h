@@ -8,32 +8,24 @@
 
 #include "Object.h"
 
-class Planet : public Node {
+class Planet : public Object {
 private:
-    char *nameFileModel;
-    char *nameFileTexture;
-    char *nameFileMtl;
-    Model *model;
+    float distance = 0.0f;
+    float rotation = 0.0f;
+    float time = 64.0f;
+
+    void generateAnimation();
+
 public:
+    Planet(unsigned int id, Node *parent, Model *model, float distance, float rotation);
 
-    Planet(unsigned int id, Node *parent, char *nameFileModel, char *nameFileTexture, char *nameFileMtl);
+    float getDistance() const;
 
-    void update(glm::vec3 positionCamera, glm::vec3 directionCamera);
+    void setDistance(float distance);
 
-    void render(Shader* shader);
+    float getTime() const;
 
-    char *getNameFileModel() const;
-
-    void setNameFileModel(char *nameFileModel);
-
-    char *getNameFileTexture() const;
-
-    void setNameFileTexture(char *nameFileTexture);
-
-    char *getNameFileMtl() const;
-
-    void setNameFileMtl(char *nameFileMtl);
-
+    void setTime(float time);
 };
 
 

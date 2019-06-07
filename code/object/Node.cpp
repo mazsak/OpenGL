@@ -115,6 +115,10 @@ void Node::updateAbsolutePosition() {
     } else {
         Node::absolutePosition = Node::getRelativePosition();
     }
+
+    for (int i = 0; i < children.size(); ++i) {
+        children[i]->updateAbsolutePosition();
+    }
 }
 
 glm::mat4 Node::getRelativePosition() {

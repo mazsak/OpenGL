@@ -4,16 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "D:/Projects/C++/CLion/OpenGL/Prism.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Prism.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/Triangle.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/main/InitWindow.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/main/main.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/main/main.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/mesh/Model.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/object/Camera.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/object/Light.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/object/Node.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/object/Object.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
-  "D:/Projects/C++/CLion/OpenGL/code/shader/Shader.cpp" "D:/Projects/C++/CLion/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj"
+  "E:/Project_CLoin/OpenGL/Prism.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Prism.cpp.obj"
+  "E:/Project_CLoin/OpenGL/Triangle.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/animate/Animation.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/main/InitWindow.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/main/main.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/main/main.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/mesh/Model.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/object/Camera.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/object/Light.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/object/Node.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/object/Object.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/object/Planet.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj"
+  "E:/Project_CLoin/OpenGL/code/shader/Shader.cpp" "E:/Project_CLoin/OpenGL/cmake-build-debug/CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

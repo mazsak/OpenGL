@@ -27,40 +27,31 @@ void Animation::addFrame(Frame frame) {
     frames.emplace_back(frame);
 }
 
-Frame Animation::animate() {
+Frame Animation::calculateFrame() {
     Frame currentFrame;
 
     int nextNumberFrame = numberFrame + 1;
-    if (frames.size() == numberFrame + 1) {
+    if (frames.size() == nextNumberFrame) {
         nextNumberFrame = 0;
     }
 
-    glm::vec3 difference = frames[nextNumberFrame].translation - frames[numberFrame].translation;
+    glm::vec3 differenceTranslation = frames[nextNumberFrame].translation - frames[numberFrame].translation;
+    glm::vec3 differenceRotation = frames[nextNumberFrame].rotation - frames[numberFrame].rotation;
+    glm::vec3 differenceScale = frames[nextNumberFrame].rotation - frames[numberFrame].rotation;
 
-    currentFrame.translation = frames[numberFrame].translation +
-                               difference * (currentTime / time);
-    currentFrame.rotation = frames[numberFrame].rotation +
-                            (frames[nextNumberFrame].rotation) - (frames[numberFrame].rotation) * (currentTime / time);
-    currentFrame.scale =
-            frames[numberFrame].scale + (frames[nextNumberFrame].scale) -
-            (frames[numberFrame].scale) * (currentTime / time);
+    currentFrame.translation = frames[numberFrame].translation + differenceTranslation * (currentTime / time);
+    currentFrame.rotation = frames[numberFrame].rotation + differenceRotation * (currentTime / time);
+    currentFrame.scale = frames[numberFrame].scale + differenceScale * (currentTime / time);
 
-    printf(" x= %f y= %f, z= %f, currentTime= %f, time= %f, numberFrame = %d, nextNumberFrame = %d \n",
-           currentFrame.translation.x,
-           currentFrame.translation.y, currentFrame.translation.z, currentTime, time, numberFrame, nextNumberFrame);
 
-    printf("difference.x= %f difference.y = %f difference.z = %f\n",difference.x,difference.y,difference.z);
-    currentTime++;
-
-    if (currentFrame.translation == frames[nextNumberFrame].translation &&
-        currentFrame.rotation == frames[nextNumberFrame].rotation &&
-        currentFrame.scale == frames[nextNumberFrame].scale) {
+    if (currentTime == time) {
         numberFrame++;
         if (frames.size() == numberFrame) {
             numberFrame = 0;
         }
         currentTime = 1;
-    }
+    } else
+        currentTime++;
 
     return currentFrame;
 }

@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include "InitWindow.h"
 #include "../shader/Shader.h"
+#include "../object/Planet.h"
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -201,11 +202,14 @@ void InitWindow::generateSolarSystem() {
 //    counter++;
 //    Object *mercuryObject = new Object(counter, root, mercuryModel);
 //    counter++;
-    Object *earthObject = new Object(counter, root, earthModel);
-    counter++;
     Object *moonObject = new Object(counter, root, moonModel);
     counter++;
-    Object *sunObject = new Object(counter, root, sunModel);
+    Planet *sunObject = new Planet(counter, root, sunModel, 46.0f, 48.0f);
+    sunObject->setTime(256);
+    counter++;
+    Planet *earthObject = new Planet(counter, sunObject, earthModel, 10.0f, 0.0f);
+    earthObject->setTime(30);
+    earthObject->setSpeedChangeFrame(0.1f);
     counter++;
 //    Object *marsObject = new Object(counter, root, marsModel);
 //    counter++;
@@ -232,35 +236,6 @@ void InitWindow::generateSolarSystem() {
     earthObject->setTranslation(glm::vec3(40, 0, 0));
     earthObject->updateAbsolutePosition();
 
-    Animation* animation = new Animation(1024);
-
-    Frame frame1;
-    frame1.translation = glm::vec3(46, 0, 0);
-    frame1.rotation = glm::vec3(0.0, 0.0, 0.0);
-    frame1.scale = glm::vec3(1.0, 1.0, 1.0);
-    animation->addFrame(frame1);
-
-    Frame frame2;
-    frame2.translation = glm::vec3(0, 0, 46);
-    frame2.rotation = glm::vec3(0.0, 0.0, 0.0);
-    frame2.scale = glm::vec3(1.0, 1.0, 1.0);
-    animation->addFrame(frame2);
-
-    Frame frame3;
-    frame3.translation = glm::vec3(-46, 0, 0);
-    frame3.rotation = glm::vec3(0.0, 0.0, 0.0);
-    frame3.scale = glm::vec3(1.0, 1.0, 1.0);
-    animation->addFrame(frame3);
-
-    Frame frame4;
-    frame4.translation = glm::vec3(0, 0, -46);
-    frame4.rotation = glm::vec3(0.0, 0.0, 0.0);
-    frame4.scale = glm::vec3(1.0, 1.0, 1.0);
-    animation->addFrame(frame4);
-
-    sunObject->setTranslation(glm::vec3(46, 0, 0));
-    sunObject->updateAbsolutePosition();
-    sunObject->addAnimation(animation);
 
 
 //    marsObject->setTranslation(glm::vec3(200, 0, 0));

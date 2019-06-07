@@ -35,15 +35,13 @@ void Object::render(Shader * shader) {
 
 
 void Object::animate() {
-    Node::animate();
 
     double currentTime = glfwGetTime();
     deltaTime = float(currentTime - lastFrame);
 
-//    if(deltaTime > 0.5) {
+    if (deltaTime > speedChangeFrame) {
         for (int i = 0; i < animations.size(); ++i) {
-            Frame frame = animations[i]->animate();
-//            printf(" x= %f y= %f, z= %f\n", frame.translation.x, frame.translation.y, frame.translation.z);
+            Frame frame = animations[i]->calculateFrame();
 
             setTranslation(frame.translation);
             setRotation(frame.rotation);
@@ -52,7 +50,7 @@ void Object::animate() {
         }
 
         lastFrame = currentTime;
-//    }
+    }
 }
 
 Object::Object(unsigned int id, Node *parent, Model *model) : Node(id, parent), model(model) {
@@ -61,4 +59,12 @@ Object::Object(unsigned int id, Node *parent, Model *model) : Node(id, parent), 
 
 void Object::addAnimation(Animation *animation) {
     animations.emplace_back(animation);
+}
+
+float Object::getSpeedChangeFrame() const {
+    return speedChangeFrame;
+}
+
+void Object::setSpeedChangeFrame(float speedChangeFrame) {
+    Object::speedChangeFrame = speedChangeFrame;
 }

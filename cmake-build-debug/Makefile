@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = D:\Projects\C++\CLion\OpenGL
+CMAKE_SOURCE_DIR = E:\Project_CLoin\OpenGL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = D:\Projects\C++\CLion\OpenGL\cmake-build-debug
+CMAKE_BINARY_DIR = E:\Project_CLoin\OpenGL\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = D:\Projects\C++\CLion\OpenGL\cmake-build-debug
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
+	E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7141.37\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start D:\Projects\C++\CLion\OpenGL\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -175,6 +175,33 @@ Triangle.s: Triangle.cpp.s
 Triangle.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/Triangle.cpp.s
 .PHONY : Triangle.cpp.s
+
+code/animate/Animation.obj: code/animate/Animation.cpp.obj
+
+.PHONY : code/animate/Animation.obj
+
+# target to build an object file
+code/animate/Animation.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj
+.PHONY : code/animate/Animation.cpp.obj
+
+code/animate/Animation.i: code/animate/Animation.cpp.i
+
+.PHONY : code/animate/Animation.i
+
+# target to preprocess a source file
+code/animate/Animation.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.i
+.PHONY : code/animate/Animation.cpp.i
+
+code/animate/Animation.s: code/animate/Animation.cpp.s
+
+.PHONY : code/animate/Animation.s
+
+# target to generate assembly for a file
+code/animate/Animation.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.s
+.PHONY : code/animate/Animation.cpp.s
 
 code/main/InitWindow.obj: code/main/InitWindow.cpp.obj
 
@@ -365,6 +392,33 @@ code/object/Object.cpp.s:
 	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Object.cpp.s
 .PHONY : code/object/Object.cpp.s
 
+code/object/Planet.obj: code/object/Planet.cpp.obj
+
+.PHONY : code/object/Planet.obj
+
+# target to build an object file
+code/object/Planet.cpp.obj:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj
+.PHONY : code/object/Planet.cpp.obj
+
+code/object/Planet.i: code/object/Planet.cpp.i
+
+.PHONY : code/object/Planet.i
+
+# target to preprocess a source file
+code/object/Planet.cpp.i:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Planet.cpp.i
+.PHONY : code/object/Planet.cpp.i
+
+code/object/Planet.s: code/object/Planet.cpp.s
+
+.PHONY : code/object/Planet.s
+
+# target to generate assembly for a file
+code/object/Planet.cpp.s:
+	$(MAKE) -f CMakeFiles\OpenGL.dir\build.make CMakeFiles/OpenGL.dir/code/object/Planet.cpp.s
+.PHONY : code/object/Planet.cpp.s
+
 code/shader/Shader.obj: code/shader/Shader.cpp.obj
 
 .PHONY : code/shader/Shader.obj
@@ -407,6 +461,9 @@ help:
 	@echo ... Triangle.obj
 	@echo ... Triangle.i
 	@echo ... Triangle.s
+	@echo ... code/animate/Animation.obj
+	@echo ... code/animate/Animation.i
+	@echo ... code/animate/Animation.s
 	@echo ... code/main/InitWindow.obj
 	@echo ... code/main/InitWindow.i
 	@echo ... code/main/InitWindow.s
@@ -428,6 +485,9 @@ help:
 	@echo ... code/object/Object.obj
 	@echo ... code/object/Object.i
 	@echo ... code/object/Object.s
+	@echo ... code/object/Planet.obj
+	@echo ... code/object/Planet.i
+	@echo ... code/object/Planet.s
 	@echo ... code/shader/Shader.obj
 	@echo ... code/shader/Shader.i
 	@echo ... code/shader/Shader.s

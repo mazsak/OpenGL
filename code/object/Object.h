@@ -16,6 +16,7 @@ private:
     Model *model;
     std::vector<Animation *> animations;
     float deltaTime= 0.0f;
+    float speedChangeFrame = 0.001f;
     float lastFrame= 0.0f;
 
 public:
@@ -25,9 +26,13 @@ public:
 
     void render(Shader *shader);
 
-    void animate() override;
+    void animate();
 
     void addAnimation(Animation * animation);
+
+    float getSpeedChangeFrame() const;
+
+    void setSpeedChangeFrame(float speedChangeFrame);
 };
 
 

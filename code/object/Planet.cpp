@@ -5,60 +5,80 @@
 #include "Planet.h"
 
 
-Planet::Planet(unsigned int id, Node *parent, char *nameFileModel, char *nameFileTexture, char *nameFileMtl) :
-        Node(id, parent), nameFileModel(nameFileModel), nameFileTexture(nameFileTexture), nameFileMtl(nameFileMtl) {
+void Planet::generateAnimation() {
+    Animation *animation = new Animation(time);
+
+    Frame frame4;
+    frame4.translation = glm::vec3(0, 0, -distance);
+    frame4.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame4.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame4);
+
+    Frame frame44;
+    frame44.translation = glm::vec3(distance * 0.75, 0, -distance * 0.75);
+    frame44.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame44.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame44);
+
+    Frame frame1;
+    frame1.translation = glm::vec3(distance, 0, 0);
+    frame1.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame1.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame1);
+
+    Frame frame11;
+    frame11.translation = glm::vec3(distance * 0.75, 0, distance * 0.75);
+    frame11.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame11.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame11);
+
+    Frame frame2;
+    frame2.translation = glm::vec3(0, 0, distance);
+    frame2.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame2.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame2);
+
+    Frame frame22;
+    frame22.translation = glm::vec3(-distance * 0.75, 0, distance * 0.75);
+    frame22.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame22.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame22);
+
+    Frame frame3;
+    frame3.translation = glm::vec3(-distance, 0, 0);
+    frame3.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame3.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame3);
+
+    Frame frame33;
+    frame33.translation = glm::vec3(-distance * 0.75, 0, -distance * 0.75);
+    frame33.rotation = glm::vec3(0.0, rotation, 0.0);
+    frame33.scale = glm::vec3(1.0, 1.0, 1.0);
+    animation->addFrame(frame33);
 
 
+    addAnimation(animation);
 }
 
-void Planet::update(glm::vec3 positionCamera, glm::vec3 directionCamera) {
-
-    float distance = glm::distance(positionCamera, glm::vec3(getAbsolutePosition()[3].x, getAbsolutePosition()[3].y, getAbsolutePosition()[3].z));
-    float size = glm::distance(getScale()*model->getMax(), getScale()*model->getMin());
-
-    float show = distance-size;
-
-    setVisible(show <= 30);
-
-    if(isVisible()){
-        for (int i = 0; i < getChildren().size(); i++){
-            getChildren()[i]->update(positionCamera, directionCamera);
-        }
-    }
+Planet::Planet(unsigned int id, Node *parent, Model *model, float distance, float rotation) : Object(id, parent, model),
+                                                                                              distance(distance),
+                                                                                              rotation(rotation) {
+    generateAnimation();
 }
 
-void Planet::render(Shader * shader) {
-    if (Planet::isVisible()) {
-        model->drawModel(shader);
 
-        glUniformMatrix4fv(shader->getModelMatrixId(), 1, GL_FALSE, &Planet::getAbsolutePosition()[0][0]);
-
-        for(int i = 0; i < getChildren().size(); i++){
-            getChildren()[i]->render(shader);
-        }
-    }
+float Planet::getTime() const {
+    return time;
 }
 
-char *Planet::getNameFileModel() const {
-    return nameFileModel;
+void Planet::setTime(float time) {
+    Planet::time = time;
 }
 
-void Planet::setNameFileModel(char *nameFileModel) {
-    Planet::nameFileModel = nameFileModel;
+float Planet::getDistance() const {
+    return distance;
 }
 
-char *Planet::getNameFileTexture() const {
-    return nameFileTexture;
-}
-
-void Planet::setNameFileTexture(char *nameFileTexture) {
-    Planet::nameFileTexture = nameFileTexture;
-}
-
-char *Planet::getNameFileMtl() const {
-    return nameFileMtl;
-}
-
-void Planet::setNameFileMtl(char *nameFileMtl) {
-    Planet::nameFileMtl = nameFileMtl;
+void Planet::setDistance(float distance) {
+    Planet::distance = distance;
 }
