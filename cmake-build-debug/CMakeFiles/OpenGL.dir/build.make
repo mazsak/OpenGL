@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe
+CMAKE_COMMAND = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe
 
 # The command to remove a file.
-RM = E:\Programs\ToolBox\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -E remove -f
+RM = D:\Programs\ToolboxApps\apps\CLion\ch-0\191.7479.33\bin\cmake\win\bin\cmake.exe -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\Project_CLoin\OpenGL
+CMAKE_SOURCE_DIR = D:\Projects\C++\CLion\OpenGL\OpenGL
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\Project_CLoin\OpenGL\cmake-build-debug
+CMAKE_BINARY_DIR = D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OpenGL.dir/depend.make
@@ -59,170 +59,170 @@ include CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/main/main.cpp.obj: ../code/main/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/code/main/main.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\main.cpp.obj -c E:\Project_CLoin\OpenGL\code\main\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenGL.dir/code/main/main.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\main.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\main.cpp
 
 CMakeFiles/OpenGL.dir/code/main/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/main/main.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\main\main.cpp > CMakeFiles\OpenGL.dir\code\main\main.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\main.cpp > CMakeFiles\OpenGL.dir\code\main\main.cpp.i
 
 CMakeFiles/OpenGL.dir/code/main/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/main/main.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\main\main.cpp -o CMakeFiles\OpenGL.dir\code\main\main.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\main.cpp -o CMakeFiles\OpenGL.dir\code\main\main.cpp.s
 
 CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj: ../code/main/InitWindow.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.obj -c E:\Project_CLoin\OpenGL\code\main\InitWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\InitWindow.cpp
 
 CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\main\InitWindow.cpp > CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\InitWindow.cpp > CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.i
 
 CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/main/InitWindow.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\main\InitWindow.cpp -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\main\InitWindow.cpp -o CMakeFiles\OpenGL.dir\code\main\InitWindow.cpp.s
 
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj: ../code/mesh/Model.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.obj -c E:\Project_CLoin\OpenGL\code\mesh\Model.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\mesh\Model.cpp
 
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\mesh\Model.cpp > CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\mesh\Model.cpp > CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.i
 
 CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/mesh/Model.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\mesh\Model.cpp -o CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\mesh\Model.cpp -o CMakeFiles\OpenGL.dir\code\mesh\Model.cpp.s
 
 CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj: ../code/shader/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.obj -c E:\Project_CLoin\OpenGL\code\shader\Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\shader\Shader.cpp
 
 CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\shader\Shader.cpp > CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\shader\Shader.cpp > CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.i
 
 CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/shader/Shader.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\shader\Shader.cpp -o CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\shader\Shader.cpp -o CMakeFiles\OpenGL.dir\code\shader\Shader.cpp.s
 
 CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj: ../code/object/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Camera.cpp.obj -c E:\Project_CLoin\OpenGL\code\object\Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Camera.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Camera.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Camera.cpp
 
 CMakeFiles/OpenGL.dir/code/object/Camera.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/object/Camera.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\object\Camera.cpp > CMakeFiles\OpenGL.dir\code\object\Camera.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Camera.cpp > CMakeFiles\OpenGL.dir\code\object\Camera.cpp.i
 
 CMakeFiles/OpenGL.dir/code/object/Camera.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/object/Camera.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\object\Camera.cpp -o CMakeFiles\OpenGL.dir\code\object\Camera.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Camera.cpp -o CMakeFiles\OpenGL.dir\code\object\Camera.cpp.s
 
 CMakeFiles/OpenGL.dir/Prism.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/Prism.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/Prism.cpp.obj: ../Prism.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGL.dir/Prism.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\Prism.cpp.obj -c E:\Project_CLoin\OpenGL\Prism.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OpenGL.dir/Prism.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\Prism.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\Prism.cpp
 
 CMakeFiles/OpenGL.dir/Prism.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/Prism.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\Prism.cpp > CMakeFiles\OpenGL.dir\Prism.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\Prism.cpp > CMakeFiles\OpenGL.dir\Prism.cpp.i
 
 CMakeFiles/OpenGL.dir/Prism.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/Prism.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\Prism.cpp -o CMakeFiles\OpenGL.dir\Prism.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\Prism.cpp -o CMakeFiles\OpenGL.dir\Prism.cpp.s
 
 CMakeFiles/OpenGL.dir/Triangle.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/Triangle.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/Triangle.cpp.obj: ../Triangle.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\Triangle.cpp.obj -c E:\Project_CLoin\OpenGL\Triangle.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OpenGL.dir/Triangle.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\Triangle.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\Triangle.cpp
 
 CMakeFiles/OpenGL.dir/Triangle.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/Triangle.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\Triangle.cpp > CMakeFiles\OpenGL.dir\Triangle.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\Triangle.cpp > CMakeFiles\OpenGL.dir\Triangle.cpp.i
 
 CMakeFiles/OpenGL.dir/Triangle.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/Triangle.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\Triangle.cpp -o CMakeFiles\OpenGL.dir\Triangle.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\Triangle.cpp -o CMakeFiles\OpenGL.dir\Triangle.cpp.s
 
 CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj: ../code/object/Node.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Node.cpp.obj -c E:\Project_CLoin\OpenGL\code\object\Node.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Node.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Node.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Node.cpp
 
 CMakeFiles/OpenGL.dir/code/object/Node.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/object/Node.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\object\Node.cpp > CMakeFiles\OpenGL.dir\code\object\Node.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Node.cpp > CMakeFiles\OpenGL.dir\code\object\Node.cpp.i
 
 CMakeFiles/OpenGL.dir/code/object/Node.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/object/Node.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\object\Node.cpp -o CMakeFiles\OpenGL.dir\code\object\Node.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Node.cpp -o CMakeFiles\OpenGL.dir\code\object\Node.cpp.s
 
 CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj: ../code/object/Object.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Object.cpp.obj -c E:\Project_CLoin\OpenGL\code\object\Object.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Object.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Object.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Object.cpp
 
 CMakeFiles/OpenGL.dir/code/object/Object.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/object/Object.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\object\Object.cpp > CMakeFiles\OpenGL.dir\code\object\Object.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Object.cpp > CMakeFiles\OpenGL.dir\code\object\Object.cpp.i
 
 CMakeFiles/OpenGL.dir/code/object/Object.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/object/Object.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\object\Object.cpp -o CMakeFiles\OpenGL.dir\code\object\Object.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Object.cpp -o CMakeFiles\OpenGL.dir\code\object\Object.cpp.s
 
 CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj: ../code/object/Light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Light.cpp.obj -c E:\Project_CLoin\OpenGL\code\object\Light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Light.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Light.cpp
 
 CMakeFiles/OpenGL.dir/code/object/Light.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/object/Light.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\object\Light.cpp > CMakeFiles\OpenGL.dir\code\object\Light.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Light.cpp > CMakeFiles\OpenGL.dir\code\object\Light.cpp.i
 
 CMakeFiles/OpenGL.dir/code/object/Light.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/object/Light.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\object\Light.cpp -o CMakeFiles\OpenGL.dir\code\object\Light.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Light.cpp -o CMakeFiles\OpenGL.dir\code\object\Light.cpp.s
 
 CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj: ../code/object/Planet.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Planet.cpp.obj -c E:\Project_CLoin\OpenGL\code\object\Planet.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\object\Planet.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Planet.cpp
 
 CMakeFiles/OpenGL.dir/code/object/Planet.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/object/Planet.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\object\Planet.cpp > CMakeFiles\OpenGL.dir\code\object\Planet.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Planet.cpp > CMakeFiles\OpenGL.dir\code\object\Planet.cpp.i
 
 CMakeFiles/OpenGL.dir/code/object/Planet.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/object/Planet.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\object\Planet.cpp -o CMakeFiles\OpenGL.dir\code\object\Planet.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\object\Planet.cpp -o CMakeFiles\OpenGL.dir\code\object\Planet.cpp.s
 
 CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj: CMakeFiles/OpenGL.dir/flags.make
 CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj: CMakeFiles/OpenGL.dir/includes_CXX.rsp
 CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj: ../code/animate/Animation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj"
-	E:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.obj -c E:\Project_CLoin\OpenGL\code\animate\Animation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj"
+	D:\Programs\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.obj -c D:\Projects\C++\CLion\OpenGL\OpenGL\code\animate\Animation.cpp
 
 CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.i"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\Project_CLoin\OpenGL\code\animate\Animation.cpp > CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.i
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\Projects\C++\CLion\OpenGL\OpenGL\code\animate\Animation.cpp > CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.i
 
 CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.s"
-	E:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\Project_CLoin\OpenGL\code\animate\Animation.cpp -o CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.s
+	D:\Programs\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\Projects\C++\CLion\OpenGL\OpenGL\code\animate\Animation.cpp -o CMakeFiles\OpenGL.dir\code\animate\Animation.cpp.s
 
 # Object files for target OpenGL
 OpenGL_OBJECTS = \
@@ -258,7 +258,7 @@ OpenGL.exe: CMakeFiles/OpenGL.dir/build.make
 OpenGL.exe: CMakeFiles/OpenGL.dir/linklibs.rsp
 OpenGL.exe: CMakeFiles/OpenGL.dir/objects1.rsp
 OpenGL.exe: CMakeFiles/OpenGL.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable OpenGL.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Linking CXX executable OpenGL.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\OpenGL.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -271,6 +271,6 @@ CMakeFiles/OpenGL.dir/clean:
 .PHONY : CMakeFiles/OpenGL.dir/clean
 
 CMakeFiles/OpenGL.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\Project_CLoin\OpenGL E:\Project_CLoin\OpenGL E:\Project_CLoin\OpenGL\cmake-build-debug E:\Project_CLoin\OpenGL\cmake-build-debug E:\Project_CLoin\OpenGL\cmake-build-debug\CMakeFiles\OpenGL.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\Projects\C++\CLion\OpenGL\OpenGL D:\Projects\C++\CLion\OpenGL\OpenGL D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug D:\Projects\C++\CLion\OpenGL\OpenGL\cmake-build-debug\CMakeFiles\OpenGL.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OpenGL.dir/depend
 

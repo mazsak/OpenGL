@@ -37,11 +37,10 @@ Frame Animation::calculateFrame() {
     }
 
     glm::vec3 differenceTranslation = frames[nextNumberFrame].translation - frames[numberFrame].translation;
-    glm::vec3 differenceRotation = frames[nextNumberFrame].rotation - frames[numberFrame].rotation;
     glm::vec3 differenceScale = frames[nextNumberFrame].rotation - frames[numberFrame].rotation;
 
     currentFrame.translation = frames[numberFrame].translation + differenceTranslation * (currentTime / time);
-    currentFrame.rotation = frames[numberFrame].rotation + differenceRotation * (currentTime / time);
+    currentFrame.rotation = frames[numberFrame].rotation * (numberFrame*time + currentTime);
     currentFrame.scale = frames[numberFrame].scale + differenceScale * (currentTime / time);
 
     if (currentTime == time) {
