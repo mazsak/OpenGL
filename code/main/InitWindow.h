@@ -6,6 +6,7 @@
 #include "../object/Light.h"
 #include "../mesh/Model.h"
 #include "../object/Object.h"
+#include "../object/Monkey.h"
 
 class InitWindow {
 private:
@@ -19,10 +20,13 @@ private:
     Node *root;
     Camera *camera;
     Light *sun;
+    std::vector<Object *> objects;
+    Monkey *monkeyObject;
     int width;
     int height;
     int levelForest = 1;
     int counter = 0;
+
 
 public:
     InitWindow(int width, int height, const char *nameWindow);
@@ -42,6 +46,10 @@ public:
     void generateForest(int level, Model *model, Node *parent, float size);
 
     void generateSolarSystem();
+
+    void myScene();
+
+    bool checkCollision(Object *first, Object *second);
 
 };
 

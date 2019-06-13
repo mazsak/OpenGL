@@ -11,6 +11,7 @@
 #include "../../glm/glm/gtc/matrix_transform.hpp"
 #include "../shader/Shader.h"
 #include <iostream>
+#include <cstring>
 
 class Node {
 private:

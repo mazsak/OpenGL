@@ -16,6 +16,7 @@ private:
     std::vector<glm::vec3> vertices;
     std::vector<glm::vec2> uvs;
     std::vector<glm::vec3> normals;
+    std::vector<glm::vec3> box;
     std::vector<unsigned short> indexs;
     glm::vec3 ambient;
     glm::vec3 diffuse;
@@ -29,6 +30,8 @@ private:
     void loadTexture(char *nameFileTexture);
 
     void loadMaterials(char *pathMtl);
+
+    void calculateBox();
 
 public:
     Model(char *nameFileModel, char *nameFileTexture, char* nameFileMtl);

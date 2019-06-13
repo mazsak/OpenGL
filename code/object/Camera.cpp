@@ -65,7 +65,7 @@ void Camera::move(GLFWwindow **window) {
                                          sin(glm::radians(yaw)) * cos(glm::radians(pitch)))));
 
     if (glfwGetKey(*window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
-        speed *= 12;
+        speed *= 2;
 
     if (glfwGetKey(*window, GLFW_KEY_W) == GLFW_PRESS)
         setTranslation(getTranslation() + getRotation() * speed);

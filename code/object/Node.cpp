@@ -136,6 +136,8 @@ glm::mat4 Node::getRelativePosition() {
     return modelMatrix;
 }
 
+
+
 float Node::getSize() const {
     return size;
 }

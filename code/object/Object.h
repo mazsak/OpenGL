@@ -11,6 +11,15 @@
 #include "../mesh/Model.h"
 #include "../animate/Animation.h"
 
+struct Box {
+    glm::vec3 min;
+    glm::vec3 max;
+
+    bool operator<(const Box that) const {
+        return memcmp((void *) this, (void *) &that, sizeof(Box)) > 0;
+    };
+};
+
 class Object : public Node {
 private:
     Model *model;
@@ -18,6 +27,8 @@ private:
     float deltaTime= 0.0f;
     float speedChangeFrame = 0.001f;
     float lastFrame= 0.0f;
+    Box box;
+    bool collision = false;
 
 public:
     Object(unsigned int id, Node *parent, Model *model);
@@ -33,6 +44,15 @@ public:
     float getSpeedChangeFrame() const;
 
     void setSpeedChangeFrame(float speedChangeFrame);
+
+    void updateAbsolutePosition();
+
+    const Box &getBox() const;
+
+    void setCollision(bool collision);
+
+    bool isCollision() const;
+
 };
 
 

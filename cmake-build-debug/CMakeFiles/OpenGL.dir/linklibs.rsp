@@ -1,1 +1,1 @@
- -LD:/Projects/C++/CLion/OpenGL/OpenGL/glew-2.1.0/lib/Release/Win32  -LD:/Projects/C++/CLion/OpenGL/OpenGL/glfw-3.2.1.bin.WIN32/lib-mingw -Wl,-Bstatic -lglfw3 -Wl,-Bdynamic -lglew32 -lopengl32 -lglu32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
+ -LE:/Project_CLoin/OpenGL/glew-2.1.0/lib/Release/Win32  -LE:/Project_CLoin/OpenGL/glfw-3.2.1.bin.WIN32/lib-mingw -Wl,-Bstatic -lglfw3 -Wl,-Bdynamic -lglew32 -lopengl32 -lglu32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 

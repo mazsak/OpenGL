@@ -30,5 +30,5 @@ add_executable(OpenGL
         code/object/Object.cpp
         code/object/Object.h
         code/object/Light.cpp
-        code/object/Light.h code/object/Planet.cpp code/object/Planet.h code/animate/Animation.cpp code/animate/Animation.h)
+        code/object/Light.h code/object/Planet.cpp code/object/Planet.h code/animate/Animation.cpp code/animate/Animation.h code/object/Monkey.cpp code/object/Monkey.h)
 target_link_libraries(OpenGL glfw3.a glew32 ${OPENGL_LIBRARIES})

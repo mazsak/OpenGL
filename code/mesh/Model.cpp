@@ -25,6 +25,8 @@ Model::Model(char *nameFileModel, char *nameFileTexture, char *nameFileMtl) {
     loadModel(nameFileModel);
     loadTexture(nameFileTexture);
     loadMaterials(nameFileMtl);
+
+    calculateBox();
 }
 
 
@@ -34,7 +36,7 @@ bool Model::loadModel(char *nameFileModel) {
     std::vector<glm::vec2> temp_uvs;
     std::vector<glm::vec3> temp_normals;
 
-    min = glm::vec3(10000, 10000, 10000);
+    min = glm::vec3(INT8_MAX, INT8_MAX, INT8_MAX);
     max = glm::vec3(0, 0, 0);
 
     FILE *file = fopen(nameFileModel, "r");
@@ -334,6 +336,17 @@ void Model::clear() {
     glDeleteBuffers(1, &uvbuffer);
     glDeleteTextures(1, &texture);
 
+}
+
+void Model::calculateBox(){
+    box.emplace_back(max);
+    box.emplace_back(glm::vec3(max.x, max.y, min.z));
+    box.emplace_back(glm::vec3(min.x, max.y, min.z));
+    box.emplace_back(glm::vec3(min.x, max.y, max.z));
+    box.emplace_back(min);
+    box.emplace_back(glm::vec3(min.x, min.y, max.z));
+    box.emplace_back(glm::vec3(max.x, min.y, max.z));
+    box.emplace_back(glm::vec3(max.x, min.y, min.z));
 }
 
 const glm::vec3 &Model::getMin() const {

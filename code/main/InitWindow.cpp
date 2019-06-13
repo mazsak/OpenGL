@@ -4,6 +4,8 @@
 #include "InitWindow.h"
 #include "../shader/Shader.h"
 #include "../object/Planet.h"
+#include "../object/Monkey.h"
+#include <typeinfo>
 
 GLFWwindow *InitWindow::getWindow() const {
     return window;
@@ -31,23 +33,25 @@ void InitWindow::setAlpha(GLclampf alpha) {
 
 void InitWindow::mainLoop() {
 
-    generateSolarSystem();
-
+    myScene();
     do {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         glUseProgram(shader->getProgramId());
         camera->move(&window);
+        monkeyObject->move(&window);
 
-//        glDisable(GL_TEXTURE_2D);
-//        glActiveTexture(GL_TEXTURE0);
-//        glDisable(GL_TEXTURE_2D);
-//        glActiveTexture(GL_TEXTURE1);
-//        glDisable(GL_TEXTURE_2D);
-//        glActiveTexture(GL_TEXTURE2);
 
         root->update(camera->getTranslation(), camera->getRotation());
         root->render(shader);
+
+        for (int i = 0; i < objects.size(); ++i) {
+            for (int j = i + 1; j < objects.size(); ++j) {
+                bool odp = checkCollision(objects[i], objects[j]);
+                objects[i]->setCollision(odp);
+                objects[j]->setCollision(odp);
+            }
+        }
 
 
         glfwSwapBuffers(InitWindow::window);
@@ -122,7 +126,7 @@ InitWindow::InitWindow(int width, int height, const char *nameWindow) {
     camera->updateAbsolutePosition();
     counter++;
 
-    sun->setTranslation(glm::vec3(0.0, 80.0, 0.0));
+    sun->setTranslation(glm::vec3(0.0, 40.0, 0.0));
     sun->updateAbsolutePosition();
 
 }
@@ -269,6 +273,88 @@ void InitWindow::generateSolarSystem() {
 
 
 }
+
+void InitWindow::myScene() {
+    Model *stump = new Model((char *) "models_blender/stump/stump.obj",
+                             (char *) "models_blender/stump/stump.bmp",
+                             (char *) "models_blender/stump/stump.mtl");
+
+
+    monkeyObject = new Monkey(counter, root, stump);
+    counter++;
+
+    Object *stumpObject = new Object(counter, root, stump);
+    counter++;
+    Object *stumpObject1 = new Object(counter, root, stump);
+    counter++;
+    Object *stumpObject2 = new Object(counter, root, stump);
+    counter++;
+
+    Animation *animation = new Animation(256);
+
+    Frame frame;
+    frame.translation = glm::vec3(-4, 0, 4);
+    frame.rotation = glm::vec3(0.0, 0.0, 0.0);
+    frame.scale = glm::vec3(3, 3, 3);
+    animation->addFrame(frame);
+    Frame frame1;
+    frame1.translation = glm::vec3(8, 0, 8);
+    frame1.rotation = glm::vec3(0.0, 0.0, 0.0);
+    frame1.scale = glm::vec3(3, 3, 3);
+    animation->addFrame(frame1);
+
+    stumpObject->addAnimation(animation);
+
+    stumpObject->setTranslation(glm::vec3(-4, 0, 4));
+    stumpObject->setScale(glm::vec3(3, 3, 3));
+    stumpObject->updateAbsolutePosition();
+
+    Animation *animation1 = new Animation(256);
+
+    Frame frame11;
+    frame11.translation = glm::vec3(4, 0, -4);
+    frame11.rotation = glm::vec3(0.0, 0.0, 0.0);
+    frame11.scale = glm::vec3(3, 3, 3);
+    animation1->addFrame(frame11);
+    Frame frame12;
+    frame12.translation = glm::vec3(-8, 0, -8);
+    frame12.rotation = glm::vec3(0.0, 0.0, 0.0);
+    frame12.scale = glm::vec3(3, 3, 3);
+    animation1->addFrame(frame12);
+
+    stumpObject1->addAnimation(animation1);
+
+    stumpObject1->setTranslation(glm::vec3(4, 0, -4));
+    stumpObject1->setScale(glm::vec3(3, 3, 3));
+    stumpObject1->updateAbsolutePosition();
+
+    stumpObject2->setTranslation(glm::vec3(4, 0, 10));
+    stumpObject2->setScale(glm::vec3(3, 3, 3));
+    stumpObject2->updateAbsolutePosition();
+
+    objects.emplace_back(monkeyObject);
+    objects.emplace_back(stumpObject);
+    objects.emplace_back(stumpObject1);
+    objects.emplace_back(stumpObject2);
+
+}
+
+bool InitWindow::checkCollision(Object *first, Object *second) {
+    bool xAxis = (first->getBox().min.x <= second->getBox().max.x && first->getBox().max.x >= second->getBox().min.x);
+    bool yAxis = (first->getBox().min.y <= second->getBox().max.y && first->getBox().max.y >= second->getBox().min.y);
+    bool zAxis = (first->getBox().min.z <= second->getBox().max.z && first->getBox().max.z >= second->getBox().min.z);
+
+    bool odp = xAxis && yAxis && zAxis;
+
+    if(odp){
+        printf("kolizja");
+    }
+
+    return odp;
+}
+
+
+
 
 
 

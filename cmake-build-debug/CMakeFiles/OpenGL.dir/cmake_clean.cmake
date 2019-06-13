@@ -11,6 +11,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/OpenGL.dir/code/object/Light.cpp.obj"
   "CMakeFiles/OpenGL.dir/code/object/Planet.cpp.obj"
   "CMakeFiles/OpenGL.dir/code/animate/Animation.cpp.obj"
+  "CMakeFiles/OpenGL.dir/code/object/Monkey.cpp.obj"
   "OpenGL.pdb"
   "OpenGL.exe"
   "OpenGL.exe.manifest"

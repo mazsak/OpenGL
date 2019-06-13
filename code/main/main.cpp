@@ -13,8 +13,8 @@ int main() {
     int width = 1136, height = 640;
     const char *name = "First app with OpenGL";
     InitWindow *initWindow = new InitWindow(width, height, name);
-    initWindow->setBlue(0.0f);
-    initWindow->setGreen(0.0f);
+    initWindow->setBlue(1.0f);
+    initWindow->setGreen(0.5f);
     initWindow->setRed(0.0f);
     initWindow->setAlpha(1.0f);
     initWindow->mainLoop();
