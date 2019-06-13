@@ -328,7 +328,7 @@ void InitWindow::myScene() {
     stumpObject1->setScale(glm::vec3(3, 3, 3));
     stumpObject1->updateAbsolutePosition();
 
-    stumpObject2->setTranslation(glm::vec3(4, 0, 10));
+    stumpObject2->setTranslation(glm::vec3(4, 0, 16));
     stumpObject2->setScale(glm::vec3(3, 3, 3));
     stumpObject2->updateAbsolutePosition();
 

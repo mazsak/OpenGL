@@ -37,6 +37,7 @@ void Object::render(Shader *shader) {
 
 void Object::animate() {
 
+    std::cout << collision;
     if (!collision) {
         double currentTime = glfwGetTime();
         deltaTime = float(currentTime - lastFrame);
@@ -82,8 +83,12 @@ void Object::updateAbsolutePosition() {
 
     box.max = model->getMax() + getTranslation();
     box.min = model->getMin() + getTranslation();
-    box.max *= getScale();
-    box.min *= getScale();
+
+    glm::vec3 centerPoint = (box.max + box.min) / 2.0f;
+    glm::vec3 shift = (box.max - centerPoint);
+
+    box.max = centerPoint + shift * getScale();
+    box.min = centerPoint - shift * getScale();
 
     for (int i = 0; i < getChildren().size(); ++i) {
         getChildren()[i]->updateAbsolutePosition();
